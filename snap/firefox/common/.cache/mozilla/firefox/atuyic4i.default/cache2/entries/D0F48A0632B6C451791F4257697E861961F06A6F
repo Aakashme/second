@@ -1,0 +1,1358 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="Content-Security-Policy" content="default-src 'none'; object-src 'none'; script-src resource: chrome:; connect-src https:; img-src https: data: blob: chrome:; style-src 'unsafe-inline';">
+    <meta name="color-scheme" content="light dark">
+    <title data-l10n-id="newtab-page-title"></title>
+    <link rel="icon" type="image/png" href="chrome://branding/content/icon32.png"/>
+    <link rel="localization" href="branding/brand.ftl" />
+    <link rel="localization" href="toolkit/branding/brandings.ftl" />
+    <link rel="localization" href="browser/newtab/newtab.ftl" />
+    <link rel="stylesheet" href="chrome://global/skin/design-system/tokens-brand.css">
+    <link rel="stylesheet" href="chrome://browser/content/contentSearchUI.css" />
+    <link rel="stylesheet" href="chrome://activity-stream/content/css/activity-stream.css" />
+  </head>
+  <!-- Cached: Mon, 22 Apr 2024 06:20:21 GMT -->
+  <body class="activity-stream">
+    <div id="header-asrouter-container" role="presentation"></div>
+    <div id="root">
+      <div><span><button class="icon icon-settings personalize-button" data-l10n-id="newtab-personalize-icon-label"></button><div class="customize-menu" role="dialog" data-l10n-id="newtab-personalize-dialog-label"><button class="close-button" data-l10n-id="newtab-custom-close-button"></button><div></div><div class="home-section"><div id="shortcuts-section" class="section"><moz-toggle id="shortcuts-toggle" pressed="true" onToggle="function() {
+    [native code]
+}" data-preference="feeds.topsites" data-eventSource="TOP_SITES" data-l10n-id="newtab-custom-shortcuts-toggle" data-l10n-attrs="label, description"></moz-toggle><div><div class="more-info-top-wrapper"><div class="more-information"><select id="row-selector" class="selector" name="row-count" data-preference="topSitesRows" aria-labelledby="custom-shortcuts-title"><option selected="" value="1" data-l10n-id="newtab-custom-row-selector" data-l10n-args="{&quot;num&quot;: 1}"></option><option value="2" data-l10n-id="newtab-custom-row-selector" data-l10n-args="{&quot;num&quot;: 2}"></option><option value="3" data-l10n-id="newtab-custom-row-selector" data-l10n-args="{&quot;num&quot;: 3}"></option><option value="4" data-l10n-id="newtab-custom-row-selector" data-l10n-args="{&quot;num&quot;: 4}"></option></select><div class="check-wrapper" role="presentation"><input type="checkbox" id="sponsored-shortcuts" class="sponsored-checkbox" checked="" data-preference="showSponsoredTopSites" data-eventSource="SPONSORED_TOP_SITES"/><label class="sponsored" for="sponsored-shortcuts" data-l10n-id="newtab-custom-sponsored-sites"></label></div></div></div></div></div><div id="pocket-section" class="section"><label class="switch"><moz-toggle id="pocket-toggle" pressed="true" onToggle="function() {
+    [native code]
+}" aria-describedby="custom-pocket-subtitle" data-preference="feeds.section.topstories" data-eventSource="TOP_STORIES" data-l10n-id="newtab-custom-stories-toggle" data-l10n-attrs="label, description"></moz-toggle></label><div></div></div><div id="recent-section" class="section"><label class="switch"><moz-toggle id="highlights-toggle" onToggle="function() {
+    [native code]
+}" data-preference="feeds.section.highlights" data-eventSource="HIGHLIGHTS" data-l10n-id="newtab-custom-recent-toggle" data-l10n-attrs="label, description"></moz-toggle></label></div><span class="divider" role="separator"></span><div><button id="settings-link" class="external-link" data-l10n-id="newtab-custom-settings"></button></div></div></div></span><div class="outer-wrapper ds-outer-wrapper-search-alignment ds-outer-wrapper-breakpoint-override visible-logo"><main><div class="non-collapsible-section"><div class="search-wrapper"><div class="logo-and-wordmark"><div class="logo"></div><div class="wordmark"></div></div><div class="search-inner-wrapper"><button class="search-handoff-button" tabindex="-1"><div class="fake-textbox"></div><input type="search" class="fake-editable" tabindex="-1" aria-hidden="true"/><div class="fake-caret"></div></button></div></div></div><div class="body-wrapper on"><div class="discovery-stream ds-layout"><div class="ds-column ds-column-12"><div class="ds-column-grid"><div><div class="ds-top-sites"><section class="collapsible-section top-sites" data-section-id="topsites"><div class="section-top-bar"><h3 class="section-title-container " style="visibility:hidden"><span class="section-title"><span data-l10n-id="newtab-section-header-topsites"></span></span><span class="learn-more-link-wrapper"></span></h3></div><div><ul class="top-sites-list"><li class="top-site-outer placeholder  "><div class="top-site-inner"><a class="top-site-button" tabindex="0" draggable="true" data-is-sponsored-link="false"><div class="tile" aria-hidden="true"><div class="icon-wrapper"><div class=""></div></div></div><div class="title"><span dir="auto"><br/></span><span class="sponsored-label" data-l10n-id="newtab-topsite-sponsored"></span></div></a><div class="topsite-impression-observer"></div></div></li><li class="top-site-outer placeholder  "><div class="top-site-inner"><a class="top-site-button" tabindex="0" draggable="true" data-is-sponsored-link="false"><div class="tile" aria-hidden="true"><div class="icon-wrapper"><div class=""></div></div></div><div class="title"><span dir="auto"><br/></span><span class="sponsored-label" data-l10n-id="newtab-topsite-sponsored"></span></div></a><div class="topsite-impression-observer"></div></div></li><li class="top-site-outer"><div class="top-site-inner"><a class="top-site-button" href="https://www.youtube.com/" tabindex="0" draggable="true" data-is-sponsored-link="false"><div class="tile" aria-hidden="true"><div class="icon-wrapper" data-fallback="y"><div class="top-site-icon rich-icon" style="background-image:url(data:image/png;base64,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)"></div></div></div><div class="title"><span dir="auto">youtube</span><span class="sponsored-label" data-l10n-id="newtab-topsite-sponsored"></span></div></a><div><button aria-haspopup="true" data-l10n-id="newtab-menu-content-tooltip" data-l10n-args="{&quot;title&quot;:&quot;youtube&quot;}" class="context-menu-button icon"></button></div><div class="topsite-impression-observer"></div></div></li><li class="top-site-outer"><div class="top-site-inner"><a class="top-site-button" href="https://teams.microsoft.com/_#/FileBrowserTabApp/General?threadId=19:414a394aac4d4371af824f64def45c60@thread.skype&amp;ctx=channel" tabindex="0" draggable="true" data-is-sponsored-link="false"><div class="tile" aria-hidden="true"><div class="icon-wrapper" data-fallback="t"><div class="top-site-icon rich-icon" style="background-image:url(data:image/png;base64,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)"></div></div></div><div class="title"><span dir="auto">teams.microsoft</span><span class="sponsored-label" data-l10n-id="newtab-topsite-sponsored"></span></div></a><div><button aria-haspopup="true" data-l10n-id="newtab-menu-content-tooltip" data-l10n-args="{&quot;title&quot;:&quot;teams.microsoft&quot;}" class="context-menu-button icon"></button></div><div class="topsite-impression-observer"></div></div></li><li class="top-site-outer"><div class="top-site-inner"><a class="top-site-button" href="https://locallhost.com/#google_vignette" tabindex="0" draggable="true" data-is-sponsored-link="false"><div class="tile" aria-hidden="true"><div class="icon-wrapper letter-fallback" data-fallback="l" style="background-color:#FF2A8A"><div class=""></div></div></div><div class="title"><span dir="auto">locallhost</span><span class="sponsored-label" data-l10n-id="newtab-topsite-sponsored"></span></div></a><div><button aria-haspopup="true" data-l10n-id="newtab-menu-content-tooltip" data-l10n-args="{&quot;title&quot;:&quot;locallhost&quot;}" class="context-menu-button icon"></button></div><div class="topsite-impression-observer"></div></div></li><li class="top-site-outer"><div class="top-site-inner"><a class="top-site-button" href="http://www.aaksh.net.com/" tabindex="0" draggable="true" data-is-sponsored-link="false"><div class="tile" aria-hidden="true"><div class="icon-wrapper letter-fallback" data-fallback="a" style="background-color:#A172FF"><div class=""></div></div></div><div class="title"><span dir="auto">aaksh.net</span><span class="sponsored-label" data-l10n-id="newtab-topsite-sponsored"></span></div></a><div><button aria-haspopup="true" data-l10n-id="newtab-menu-content-tooltip" data-l10n-args="{&quot;title&quot;:&quot;aaksh.net&quot;}" class="context-menu-button icon"></button></div><div class="topsite-impression-observer"></div></div></li><li class="top-site-outer hide-for-narrow"><div class="top-site-inner"><a class="top-site-button" href="https://www.nginx.com/resources/wiki/start/" tabindex="0" draggable="true" data-is-sponsored-link="false"><div class="tile" aria-hidden="true"><div class="icon-wrapper" data-fallback="n"><div></div><div class="top-site-icon default-icon" data-fallback="" style="background-image:url(data:image/png;base64,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)"></div></div></div><div class="title"><span dir="auto">nginx</span><span class="sponsored-label" data-l10n-id="newtab-topsite-sponsored"></span></div></a><div><button aria-haspopup="true" data-l10n-id="newtab-menu-content-tooltip" data-l10n-args="{&quot;title&quot;:&quot;nginx&quot;}" class="context-menu-button icon"></button></div><div class="topsite-impression-observer"></div></div></li><li class="top-site-outer hide-for-narrow"><div class="top-site-inner"><a class="top-site-button" href="https://www.office.com/" tabindex="0" draggable="true" data-is-sponsored-link="false"><div class="tile" aria-hidden="true"><div class="icon-wrapper" data-fallback="o"><div></div><div class="top-site-icon default-icon" data-fallback="" style="background-image:url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADAAAAAwCAYAAABXAvmHAAANn0lEQVRoQ8WZC5AUxRnHu3tm9nULx/E4RVALPFFBBIH4rihBoiAhoSIEeRSeVxVjGVCkCBqQu5UCxQcopFKRElQU1LuIlDFESyNo+UA9EESxEERAFB+8yd3t7jw6/697em/v3JPjYUJVM7N7u9Pf7/v/v697Zjn7Kf9JydXlOZc/1TR6gpP478aq1bHd9e37spjVWxRFSgNbMIf531lCfNztnLL1C4fyzEmcjp00ACmlGHL7G/0bGK8S0Xg/EYsWW7FIlDs2CyyesWx+SApeG5V26sU/nr7uZKlywgCrV6+2979/wanvfrW9YlNm323pSKzEiicYj0UZABhzBGOWYNzCVBjctvbjuCARTy6+oMtH31QNHOidiCInBFB915FOnnNw9PeZw+Uv79nW97AtuJ1ow0QiwaAARoRxA2BjKqEhmG1JIeQGFnGWJKNtn6sZ1eb744U4LoDqammJLbuv8XyZ8gLZc9WODxOfZ+qYXdSWKQAoIOIE4ADA0goQgFEBrwmGW6Ke2ewTyaNV/xrT6WXOeXCsIMcE8Oij0inZ983ZIutNkUyOCaSMfXVkP1v5xTqWceLMThJAEsEXMQsAXCkAAASPYAGA8FDUxk4KAq9xTAuLL7NZdN4p3dtvXTSAu60FaRUAFejSe7eXRbL2mAjn4zBt9yAIuI/muP7bbWzN11sYiyN4UqCIFAgBolAgYmsAClTZx8BoS+WUga3wejs4n44Kvuz5YZ22tabQjwpQPVJaDb2+nOAE7A7Ggh42p5xyRo3dl5K9uesjtvb7HQi8RAFYsBAVsRWPMR4nC+UBhDZSaiglcBGlTFjgAEJxuEyIz4QVzEsM6fRkDef+j6nRIsCqiTL6ZdtdP0MNVlqcD8Kl9Xw0KHmA8GXAXt+xkX2wb5cGSBgFqAZiugaiTQG0EgRASlDgGoCbAs+dC8kFe923nMqydJvaltaPggD3Tfu8uDgRnWIFQQWTwWmU8fzg9TmQQoD394YARgHVhQBAChgA6kaUdVJBZV9D6ODzVFDZCYcNCCn3AHRxgysfem1w+0PN1fgBQHX1O/E9m7suFDIYLySL5AIPgzYK2LQGNgeAAhZqgCykFDAACF5l3glrIQdCwVORG1nDAjcA+AopA9gsdiNPRUXxxJrLeEM+RBMAKtYFlTsmAHsBlyJJweIaKvvmSJlX86n3JFsDC62FAk6CagDBhzUgEgSALhQDqgoewUW0CupcFXQIFmZdW4ouHLZZmpSHxc7YfwLbvu2lixNP5LfbJgAPPvh1x+BwZjkyP1gFHHrdAOjAtZ3onADezAG0Q/B6HbDIQqRAIgQg+yD4XEul1wrC2KhZa1UK0AQ4KoAQhIvX2tjBDc8MaLvXqNAE4N47t/WXEbHGklxln77baKG8OghVEOhCb+3cyFQNJEKAeBIARQg+DwBGVNk3IEYFOjZfF0wNmMDJQuE5jkckj1z1jwGR9YUBqnbd5PveYuowTaxDIOibAheizBslCOBtANRSF4qXYO+TbFQgkYAJQwXIRg6+rGyElNAR9YAtReM6oAoZScsvYqoBCt7AIK7AEhX/7BtfUhDgnunbZqAPz1LqNYfItdBGCFiNvbtrI1tnFIi2YU6sTZonkx/aRdFNLB75TiSAG3NKRZT3hoX6sagV1XYK/W8WNtNGwwJGC9WBk0eUlfRrm1szXugTnV0QoPLurSnJrJkaoDCE6oJ5FlqLhexDAFjJksB2itbZdlFVMuGsL4pGD7Hdu7PVWAlH1bBoXd2OYr8o1l/YvNJyrP7SQYgmeLPRgwpqsWnifYo9bKvqTyK1sne0qiDA9MqtKWg0k2BN4epzbSnTfQwEWah258fehgO79tjx5BLb7vDIW8uHHTAXL3S87qWdJdJpO8myZIV0rM64uJ1byIwKYeaN9+m+TltJ2Ti18rwWAKZBAazlM8nrjSoYNUxBN1rIFiLYuW/nS6/v+qSq9sVbNiDgVt46Sj781YN95YG9Kd6++DrZLiFyi5eyTp73lXVCOxkFznEKKzCVLAQAZTv1YSVerhPRuSlgrYLwcMsy45Z7zrgfn2xl8EYXyUdcPXea1z4+Sw670hZ9euhthfE+fYwUMbHjVJJ1BUutOKsFgMnNAAwI9kJNQMxiZnMASDF90qyuDxwPwNiBc6dm/exsl/m2f1FPxodcxnjnjuhSZOAw80qOEBpxIJbUim5WYQUmKgAOBbSFDEAOJExKIwDzLOlMn3acABMGL5ga+JnZru/aGMzrkGTyst6MXdFHgxj7GBq9LqVWnNkCwK13b0kF0pqp1FMAOvP5MLktBbV1zjwHANOPE6Dimr9OZdKd7QW+7RFA4DIX+yuvtJixYVBjYD+1raD6JfvQJp6KeEUXXliBm/MAcrVjvpgHY7YZFhM+1Kiac8+Zc471dpD2XTcP/dt0yYPKwPew8fUB4DMspMyjARiv5xmMjx7E+FldYSuqPpXMlgHKAcBCBfLVa4RpVEO3WbXdfbRvmZhcXt4tbcqzNcfJI6vj2fTB+YHkv5fS47jDY4EEQB6EslVxjAVXXcjY8Mtx1xejlp5acXoLCoyfDgAmZjapG/VwDQKSjmFdGCDdMMR7zE+PWDSn557WBG4+c/u4pzqzBvmC9L2LoQaCJwAMPwCEp4ZHA2q4uNf3Lu3FgvIhzIraAGihBsYCwCcA0wDMbJpBedF0etMYAs6yac8f98J959YcC8DdY54dje8tlYF0KPsEAQxYyNcgpISCgLU81AYKLjN2EAr8fHShFtroSACgTBRAoX+60dNEuDvG8DApFZ0r2ZbDQl5fO6fnx62BmP2HV8536+qfz7puD20dAtAQOSXofYycGlAic04XlhkzMPX3SzsVLuJfAwA1DwB9026C1Wd65AeeVQBUfAThvdcgWPnW+/t/+mMQ829/4zzvSPrxjJ+92PPIKtr3GoIAkCA1QgBcX4FQYWMDWPfbS1LLx/cpDHAdANCslAImYLO8UuD0FIIyrgNH0CQvJshCdmqDbuBuygTBn/xDDe/sXzb0SKPhGF+1YF+bPTs/u7whk52bdb3eqkBDAPK5to1RA/OrmghBcpbC3GUdU4vmjSgMMPSubTMCEcwiAApY+xKBG7vg3SwmIV/qzONIBUeFpgLKMt9z61y3fqXMpJ+ok/E3q0f2YtZm5+fpbLo8k3GHZ9x0kj7rIngCoOB9yrIq3tD/ORXy1AiLXDr2jIefG1d4O/3LP39+k2TeYmMVClxlHYG7xi6UbdWzTb+mQChwDD/LAg9Pz/1swDPpvadHnJVzzxsoM4E7IuNmO2azGUHBZ1GUJnjT+/3Q86p4CYBeU73hHP/hXFsMu+WKB56/ofANzcA7P+2Pp55rAsmSPr6sg8YIrUIZ0hMiADUgvQo6HG6GcQC0RYu6qF0pu75rT5bEUwcK2MXI4nN0pOBds2AhIdR5TPY1CGanoJWlQggFw4+IiLxqztOjC99SDrlrfaeDLLkcl7uaAid/U4HqjOu2RsGrQUHjSBmXOJcIPoEsDSgpZYNKu7Fz23RgHJlQQZNlXARNICG4Wm09rSQFnStmowQVNb6vu5KuBfTxVyMsPqbqmV8VvqnHp8SF0zff6En2CCZIUvAq6xRwmHmdcR04ZZ6RZRD8GbE4u7GsH+tdfAqL4GZLBxjahWpEqRAuTOR7tV3Q2aej7vs6+4EJXK0PGgDhH7GlmFS57DdLW3ysQsXbdfI78SKraCGmGI8AIjrrlO08u7jIOAIXGB1th13b+Sw2snsfbO7wuBFZ1fbQFjNBK6DwtU4KvTZbh8bg6XGlsk7YkVT2KWt4sHUo7U+cXzOq5Qdbpn93n1ZbDMmnBFm3AhCdseXldA1jFQq+BLvEK085k13bpQcra9tByW2yqrMf+twUO9lFZT60jWq9Zh0gpc3qG24pQgjUwh48BX+svqHhobk1o47+aNFAlOHhbjurdkBHy0vtra/7xZ66Azzw0qyzE2WXdOzCBp9WxroWFSPrIvQvasUEGGZX7yrDTJuM5wduFFC20RBGAfINVvp/c89NXVBsfTB04dCCPw6aLU2Li6fErzEbD/oTYKA78BilB35tdCz1zAPdMvSt6SLaGsbXzbOdv9MMuw41CNr7qNap6406NkA+g/fnrT144MmamlHH93g9nwgy8u3LWVl9fTAWu89xsHp3TMZ9WnxyS32+n0OQvD2+bgLh+7RtDkGpy9Df8JaE6bZ7TD7tSHv5rX+5YiuK9aj32UdVIB+kFj8x4ceXs4P6YAq2S2NQrDHVvykYCiRnCb13MQo18foPbEMrTpD2PLmcS+8hnklsvXnRgJP7E1Nzf9Hd1KbH2LW+m67C9L0AktAe1plVWTULVHhOa4raLhgAei2DenStzfgdubJ4xxevjDqKXQr5/JgUaH6Bt5ceKbXrnd8FWa8cy15fLEw8VxfNYUKrkefRsVCg/gYcHo/XB8+OWtjvf/szaz7I6tXSjm9jp/r1hytgpUno/+1pL9Nke6AspjsNAA6IQDxs+dkl7Yfs/2bg//OH7uaFvmb+3v4ou0qoMAALYDF8HVV3ulhEUPCHcLLetqzK4ZXd17WmQH/svsL87YQsVGiCVatkNLHhq35pIc/HDXup2kV63nd4ILXp2y5sw7He/B8N4qQDNFeFXp+sbBeC+S9f48OpEM/C9wAAAABJRU5ErkJggg==)"></div></div></div><div class="title"><span dir="auto">office</span><span class="sponsored-label" data-l10n-id="newtab-topsite-sponsored"></span></div></a><div><button aria-haspopup="true" data-l10n-id="newtab-menu-content-tooltip" data-l10n-args="{&quot;title&quot;:&quot;office&quot;}" class="context-menu-button icon"></button></div><div class="topsite-impression-observer"></div></div></li></ul><div class="edit-topsites-wrapper"></div></div></section></div></div></div></div><style data-styles="[[null]]"></style></div><section class="collapsible-section ds-layout" data-section-id="topstories"><div class="section-top-bar"><h3 class="section-title-container "><span class="section-title"><span data-l10n-id="newtab-section-header-stories"></span></span><span class="learn-more-link-wrapper"><span class="learn-more-link"><a href="https://getpocket.com/firefox/new_tab_learn_more" data-l10n-id="newtab-pocket-learn-more"></a></span></span></h3></div><div><div class="discovery-stream ds-layout"><div class="ds-column ds-column-12"><div class="ds-column-grid"><div><div><div class="ds-card-grid    ds-card-grid-include-descriptions "><article class="ds-card   ds-card-title-lines-3 ds-card-desc-lines-3  "><div class="img-wrapper"><picture class="ds-image
+       img
+      
+      
+    "><img loading="lazy" crossorigin="anonymous" sizes="(min-width: 1122px) 296px,(min-width: 866px) 218px,(max-width: 610px) 202px,202px" src="https://s3.us-east-1.amazonaws.com/pocket-curatedcorpusapi-prod-images/0e270581-f88f-4dca-9614-0f108cae1d47.jpeg" srcSet="https://img-getpocket.cdn.mozilla.net/296x148/filters:format(jpeg):quality(60):no_upscale():strip_exif()/https%3A%2F%2Fs3.us-east-1.amazonaws.com%2Fpocket-curatedcorpusapi-prod-images%2F0e270581-f88f-4dca-9614-0f108cae1d47.jpeg 296w,https://img-getpocket.cdn.mozilla.net/592x296/filters:format(jpeg):quality(60):no_upscale():strip_exif()/https%3A%2F%2Fs3.us-east-1.amazonaws.com%2Fpocket-curatedcorpusapi-prod-images%2F0e270581-f88f-4dca-9614-0f108cae1d47.jpeg 592w,https://img-getpocket.cdn.mozilla.net/218x109/filters:format(jpeg):quality(60):no_upscale():strip_exif()/https%3A%2F%2Fs3.us-east-1.amazonaws.com%2Fpocket-curatedcorpusapi-prod-images%2F0e270581-f88f-4dca-9614-0f108cae1d47.jpeg 218w,https://img-getpocket.cdn.mozilla.net/436x218/filters:format(jpeg):quality(60):no_upscale():strip_exif()/https%3A%2F%2Fs3.us-east-1.amazonaws.com%2Fpocket-curatedcorpusapi-prod-images%2F0e270581-f88f-4dca-9614-0f108cae1d47.jpeg 436w,https://img-getpocket.cdn.mozilla.net/202x101/filters:format(jpeg):quality(60):no_upscale():strip_exif()/https%3A%2F%2Fs3.us-east-1.amazonaws.com%2Fpocket-curatedcorpusapi-prod-images%2F0e270581-f88f-4dca-9614-0f108cae1d47.jpeg 202w,https://img-getpocket.cdn.mozilla.net/404x202/filters:format(jpeg):quality(60):no_upscale():strip_exif()/https%3A%2F%2Fs3.us-east-1.amazonaws.com%2Fpocket-curatedcorpusapi-prod-images%2F0e270581-f88f-4dca-9614-0f108cae1d47.jpeg 404w"/></picture></div><a href="https://www.romper.com/parenting/my-baby-hates-me-parent-preference-dad?utm_source=pocket-newtab-en-intl" title="The Three Long Years When My Baby Hated Me" class="ds-card-link"><div class="impression-observer"></div></a><div class="meta"><div class="info-wrap"><p class="source clamp">romper.com</p><header class="title clamp">The Three Long Years When My Baby Hated Me</header><p class="excerpt clamp">Precisely when we finished weaning, her parental preference shifted dramatically, and in favor of my husband.</p></div></div><div class="card-stp-button-hover-background"><div class="card-stp-button-position-wrapper"><button class="card-stp-button"><span class="story-badge-icon icon icon-pocket-save"></span><span data-l10n-id="newtab-pocket-save"></span></button><div class="context-menu-position-container"><button aria-haspopup="true" data-l10n-id="newtab-menu-content-tooltip" data-l10n-args="{&quot;title&quot;:&quot;The Three Long Years When My Baby Hated Me&quot;}" class="context-menu-button icon"></button></div></div></div></article><article class="ds-card   ds-card-title-lines-3 ds-card-desc-lines-3  "><div class="img-wrapper"><picture class="ds-image
+       img
+      
+      
+    "><img loading="lazy" crossorigin="anonymous" sizes="(min-width: 1122px) 296px,(min-width: 866px) 218px,(max-width: 610px) 202px,202px" src="https://s3.us-east-1.amazonaws.com/pocket-curatedcorpusapi-prod-images/0d2f1aa4-83be-4997-8924-63964832941f.jpeg" srcSet="https://img-getpocket.cdn.mozilla.net/296x148/filters:format(jpeg):quality(60):no_upscale():strip_exif()/https%3A%2F%2Fs3.us-east-1.amazonaws.com%2Fpocket-curatedcorpusapi-prod-images%2F0d2f1aa4-83be-4997-8924-63964832941f.jpeg 296w,https://img-getpocket.cdn.mozilla.net/592x296/filters:format(jpeg):quality(60):no_upscale():strip_exif()/https%3A%2F%2Fs3.us-east-1.amazonaws.com%2Fpocket-curatedcorpusapi-prod-images%2F0d2f1aa4-83be-4997-8924-63964832941f.jpeg 592w,https://img-getpocket.cdn.mozilla.net/218x109/filters:format(jpeg):quality(60):no_upscale():strip_exif()/https%3A%2F%2Fs3.us-east-1.amazonaws.com%2Fpocket-curatedcorpusapi-prod-images%2F0d2f1aa4-83be-4997-8924-63964832941f.jpeg 218w,https://img-getpocket.cdn.mozilla.net/436x218/filters:format(jpeg):quality(60):no_upscale():strip_exif()/https%3A%2F%2Fs3.us-east-1.amazonaws.com%2Fpocket-curatedcorpusapi-prod-images%2F0d2f1aa4-83be-4997-8924-63964832941f.jpeg 436w,https://img-getpocket.cdn.mozilla.net/202x101/filters:format(jpeg):quality(60):no_upscale():strip_exif()/https%3A%2F%2Fs3.us-east-1.amazonaws.com%2Fpocket-curatedcorpusapi-prod-images%2F0d2f1aa4-83be-4997-8924-63964832941f.jpeg 202w,https://img-getpocket.cdn.mozilla.net/404x202/filters:format(jpeg):quality(60):no_upscale():strip_exif()/https%3A%2F%2Fs3.us-east-1.amazonaws.com%2Fpocket-curatedcorpusapi-prod-images%2F0d2f1aa4-83be-4997-8924-63964832941f.jpeg 404w"/></picture></div><a href="https://www.economist.com/finance-and-economics/2024/04/16/generation-z-is-unprecedentedly-rich?utm_source=pocket-newtab-en-intl" title="Generation Z Is Unprecedentedly Rich" class="ds-card-link"><div class="impression-observer"></div></a><div class="meta"><div class="info-wrap"><p class="source clamp">The Economist</p><header class="title clamp">Generation Z Is Unprecedentedly Rich</header><p class="excerpt clamp">Generation Z is taking over. In the rich world there are at least 250m people born between 1997 and 2012. About half are now in a job.</p></div></div><div class="card-stp-button-hover-background"><div class="card-stp-button-position-wrapper"><button class="card-stp-button"><span class="story-badge-icon icon icon-pocket-save"></span><span data-l10n-id="newtab-pocket-save"></span></button><div class="context-menu-position-container"><button aria-haspopup="true" data-l10n-id="newtab-menu-content-tooltip" data-l10n-args="{&quot;title&quot;:&quot;Generation Z Is Unprecedentedly Rich&quot;}" class="context-menu-button icon"></button></div></div></div></article><article class="ds-card   ds-card-title-lines-3 ds-card-desc-lines-3  "><div class="img-wrapper"><picture class="ds-image
+       img
+      
+      
+    "><img loading="lazy" crossorigin="anonymous" sizes="(min-width: 1122px) 296px,(min-width: 866px) 218px,(max-width: 610px) 202px,202px" src="https://s3.us-east-1.amazonaws.com/pocket-curatedcorpusapi-prod-images/7d1fe7df-1285-4a71-a978-65432ac8f3bc.jpeg" srcSet="https://img-getpocket.cdn.mozilla.net/296x148/filters:format(jpeg):quality(60):no_upscale():strip_exif()/https%3A%2F%2Fs3.us-east-1.amazonaws.com%2Fpocket-curatedcorpusapi-prod-images%2F7d1fe7df-1285-4a71-a978-65432ac8f3bc.jpeg 296w,https://img-getpocket.cdn.mozilla.net/592x296/filters:format(jpeg):quality(60):no_upscale():strip_exif()/https%3A%2F%2Fs3.us-east-1.amazonaws.com%2Fpocket-curatedcorpusapi-prod-images%2F7d1fe7df-1285-4a71-a978-65432ac8f3bc.jpeg 592w,https://img-getpocket.cdn.mozilla.net/218x109/filters:format(jpeg):quality(60):no_upscale():strip_exif()/https%3A%2F%2Fs3.us-east-1.amazonaws.com%2Fpocket-curatedcorpusapi-prod-images%2F7d1fe7df-1285-4a71-a978-65432ac8f3bc.jpeg 218w,https://img-getpocket.cdn.mozilla.net/436x218/filters:format(jpeg):quality(60):no_upscale():strip_exif()/https%3A%2F%2Fs3.us-east-1.amazonaws.com%2Fpocket-curatedcorpusapi-prod-images%2F7d1fe7df-1285-4a71-a978-65432ac8f3bc.jpeg 436w,https://img-getpocket.cdn.mozilla.net/202x101/filters:format(jpeg):quality(60):no_upscale():strip_exif()/https%3A%2F%2Fs3.us-east-1.amazonaws.com%2Fpocket-curatedcorpusapi-prod-images%2F7d1fe7df-1285-4a71-a978-65432ac8f3bc.jpeg 202w,https://img-getpocket.cdn.mozilla.net/404x202/filters:format(jpeg):quality(60):no_upscale():strip_exif()/https%3A%2F%2Fs3.us-east-1.amazonaws.com%2Fpocket-curatedcorpusapi-prod-images%2F7d1fe7df-1285-4a71-a978-65432ac8f3bc.jpeg 404w"/></picture></div><a href="https://indianexpress.com/article/explained/explained-culture/snape-srk-lord-byron-9281153/?utm_source=pocket-newtab-en-intl" title="Influencing Severus Snape to SRK, why Lord Byron still captures our imagination" class="ds-card-link"><div class="impression-observer"></div></a><div class="meta"><div class="info-wrap"><p class="source clamp">The Indian Express</p><header class="title clamp">Influencing Severus Snape to SRK, why Lord Byron still captures our imagination</header><p class="excerpt clamp">“Mad, bad, and dangerous to know,” is how Lady Caroline Lamb described her lover Lord George Byron (1788-1824), an unlikely Romantic hero, who breathed life into a million literary characters — and continues to do so, two centuries after his passing.</p></div></div><div class="card-stp-button-hover-background"><div class="card-stp-button-position-wrapper"><button class="card-stp-button"><span class="story-badge-icon icon icon-pocket-save"></span><span data-l10n-id="newtab-pocket-save"></span></button><div class="context-menu-position-container"><button aria-haspopup="true" data-l10n-id="newtab-menu-content-tooltip" data-l10n-args="{&quot;title&quot;:&quot;Influencing Severus Snape to SRK, why Lord Byron still captures our imagination&quot;}" class="context-menu-button icon"></button></div></div></div></article><article class="ds-card   ds-card-title-lines-3 ds-card-desc-lines-3  "><div class="img-wrapper"><picture class="ds-image
+       img
+      
+      
+    "><img loading="lazy" crossorigin="anonymous" sizes="(min-width: 1122px) 296px,(min-width: 866px) 218px,(max-width: 610px) 202px,202px" src="https://s3.us-east-1.amazonaws.com/pocket-curatedcorpusapi-prod-images/80597446-f553-4e7f-8256-800f417fa1cc.jpeg" srcSet="https://img-getpocket.cdn.mozilla.net/296x148/filters:format(jpeg):quality(60):no_upscale():strip_exif()/https%3A%2F%2Fs3.us-east-1.amazonaws.com%2Fpocket-curatedcorpusapi-prod-images%2F80597446-f553-4e7f-8256-800f417fa1cc.jpeg 296w,https://img-getpocket.cdn.mozilla.net/592x296/filters:format(jpeg):quality(60):no_upscale():strip_exif()/https%3A%2F%2Fs3.us-east-1.amazonaws.com%2Fpocket-curatedcorpusapi-prod-images%2F80597446-f553-4e7f-8256-800f417fa1cc.jpeg 592w,https://img-getpocket.cdn.mozilla.net/218x109/filters:format(jpeg):quality(60):no_upscale():strip_exif()/https%3A%2F%2Fs3.us-east-1.amazonaws.com%2Fpocket-curatedcorpusapi-prod-images%2F80597446-f553-4e7f-8256-800f417fa1cc.jpeg 218w,https://img-getpocket.cdn.mozilla.net/436x218/filters:format(jpeg):quality(60):no_upscale():strip_exif()/https%3A%2F%2Fs3.us-east-1.amazonaws.com%2Fpocket-curatedcorpusapi-prod-images%2F80597446-f553-4e7f-8256-800f417fa1cc.jpeg 436w,https://img-getpocket.cdn.mozilla.net/202x101/filters:format(jpeg):quality(60):no_upscale():strip_exif()/https%3A%2F%2Fs3.us-east-1.amazonaws.com%2Fpocket-curatedcorpusapi-prod-images%2F80597446-f553-4e7f-8256-800f417fa1cc.jpeg 202w,https://img-getpocket.cdn.mozilla.net/404x202/filters:format(jpeg):quality(60):no_upscale():strip_exif()/https%3A%2F%2Fs3.us-east-1.amazonaws.com%2Fpocket-curatedcorpusapi-prod-images%2F80597446-f553-4e7f-8256-800f417fa1cc.jpeg 404w"/></picture></div><a href="https://www.vox.com/health/2024/4/17/24132112/period-mental-health-depression-anxiety-menstruation?utm_source=pocket-newtab-en-intl" title="What Science Is Just Starting to Understand About Periods" class="ds-card-link"><div class="impression-observer"></div></a><div class="meta"><div class="info-wrap"><p class="source clamp">Vox</p><header class="title clamp">What Science Is Just Starting to Understand About Periods</header><p class="excerpt clamp">Researchers are still only beginning to explore exactly how menstruation can affect health — and, in some people, worsen symptoms of illness.</p></div></div><div class="card-stp-button-hover-background"><div class="card-stp-button-position-wrapper"><button class="card-stp-button"><span class="story-badge-icon icon icon-pocket-save"></span><span data-l10n-id="newtab-pocket-save"></span></button><div class="context-menu-position-container"><button aria-haspopup="true" data-l10n-id="newtab-menu-content-tooltip" data-l10n-args="{&quot;title&quot;:&quot;What Science Is Just Starting to Understand About Periods&quot;}" class="context-menu-button icon"></button></div></div></div></article><article class="ds-card   ds-card-title-lines-3 ds-card-desc-lines-3  "><div class="img-wrapper"><picture class="ds-image
+       img
+      
+      
+    "><img loading="lazy" crossorigin="anonymous" sizes="(min-width: 1122px) 296px,(min-width: 866px) 218px,(max-width: 610px) 202px,202px" src="https://s3.us-east-1.amazonaws.com/pocket-curatedcorpusapi-prod-images/20697e1e-d408-436a-8d97-e33129d121e7.jpeg" srcSet="https://img-getpocket.cdn.mozilla.net/296x148/filters:format(jpeg):quality(60):no_upscale():strip_exif()/https%3A%2F%2Fs3.us-east-1.amazonaws.com%2Fpocket-curatedcorpusapi-prod-images%2F20697e1e-d408-436a-8d97-e33129d121e7.jpeg 296w,https://img-getpocket.cdn.mozilla.net/592x296/filters:format(jpeg):quality(60):no_upscale():strip_exif()/https%3A%2F%2Fs3.us-east-1.amazonaws.com%2Fpocket-curatedcorpusapi-prod-images%2F20697e1e-d408-436a-8d97-e33129d121e7.jpeg 592w,https://img-getpocket.cdn.mozilla.net/218x109/filters:format(jpeg):quality(60):no_upscale():strip_exif()/https%3A%2F%2Fs3.us-east-1.amazonaws.com%2Fpocket-curatedcorpusapi-prod-images%2F20697e1e-d408-436a-8d97-e33129d121e7.jpeg 218w,https://img-getpocket.cdn.mozilla.net/436x218/filters:format(jpeg):quality(60):no_upscale():strip_exif()/https%3A%2F%2Fs3.us-east-1.amazonaws.com%2Fpocket-curatedcorpusapi-prod-images%2F20697e1e-d408-436a-8d97-e33129d121e7.jpeg 436w,https://img-getpocket.cdn.mozilla.net/202x101/filters:format(jpeg):quality(60):no_upscale():strip_exif()/https%3A%2F%2Fs3.us-east-1.amazonaws.com%2Fpocket-curatedcorpusapi-prod-images%2F20697e1e-d408-436a-8d97-e33129d121e7.jpeg 202w,https://img-getpocket.cdn.mozilla.net/404x202/filters:format(jpeg):quality(60):no_upscale():strip_exif()/https%3A%2F%2Fs3.us-east-1.amazonaws.com%2Fpocket-curatedcorpusapi-prod-images%2F20697e1e-d408-436a-8d97-e33129d121e7.jpeg 404w"/></picture></div><a href="https://annehelen.substack.com/p/i-resonate-with-that-nails-on-chalkboard?utm_source=pocket-newtab-en-intl" title="A Grammatical Annoyance: &quot;I Resonate With That&quot;" class="ds-card-link"><div class="impression-observer"></div></a><div class="meta"><div class="info-wrap"><p class="source clamp">Culture Study</p><header class="title clamp">A Grammatical Annoyance: &quot;I Resonate With That&quot;</header><p class="excerpt clamp">The first time I noticed it, I thought it was just a mistake: someone mixing up the grammar, not knowing it should read.</p></div></div><div class="card-stp-button-hover-background"><div class="card-stp-button-position-wrapper"><button class="card-stp-button"><span class="story-badge-icon icon icon-pocket-save"></span><span data-l10n-id="newtab-pocket-save"></span></button><div class="context-menu-position-container"><button aria-haspopup="true" data-l10n-id="newtab-menu-content-tooltip" data-l10n-args="{&quot;title&quot;:&quot;A Grammatical Annoyance: \&quot;I Resonate With That\&quot;&quot;}" class="context-menu-button icon"></button></div></div></div></article><article class="ds-card   ds-card-title-lines-3 ds-card-desc-lines-3  "><div class="img-wrapper"><picture class="ds-image
+       img
+      
+      
+    "><img loading="lazy" crossorigin="anonymous" sizes="(min-width: 1122px) 296px,(min-width: 866px) 218px,(max-width: 610px) 202px,202px" src="https://s3.us-east-1.amazonaws.com/pocket-curatedcorpusapi-prod-images/2e4c7245-39bf-4dcc-9970-17c104bc696e.jpeg" srcSet="https://img-getpocket.cdn.mozilla.net/296x148/filters:format(jpeg):quality(60):no_upscale():strip_exif()/https%3A%2F%2Fs3.us-east-1.amazonaws.com%2Fpocket-curatedcorpusapi-prod-images%2F2e4c7245-39bf-4dcc-9970-17c104bc696e.jpeg 296w,https://img-getpocket.cdn.mozilla.net/592x296/filters:format(jpeg):quality(60):no_upscale():strip_exif()/https%3A%2F%2Fs3.us-east-1.amazonaws.com%2Fpocket-curatedcorpusapi-prod-images%2F2e4c7245-39bf-4dcc-9970-17c104bc696e.jpeg 592w,https://img-getpocket.cdn.mozilla.net/218x109/filters:format(jpeg):quality(60):no_upscale():strip_exif()/https%3A%2F%2Fs3.us-east-1.amazonaws.com%2Fpocket-curatedcorpusapi-prod-images%2F2e4c7245-39bf-4dcc-9970-17c104bc696e.jpeg 218w,https://img-getpocket.cdn.mozilla.net/436x218/filters:format(jpeg):quality(60):no_upscale():strip_exif()/https%3A%2F%2Fs3.us-east-1.amazonaws.com%2Fpocket-curatedcorpusapi-prod-images%2F2e4c7245-39bf-4dcc-9970-17c104bc696e.jpeg 436w,https://img-getpocket.cdn.mozilla.net/202x101/filters:format(jpeg):quality(60):no_upscale():strip_exif()/https%3A%2F%2Fs3.us-east-1.amazonaws.com%2Fpocket-curatedcorpusapi-prod-images%2F2e4c7245-39bf-4dcc-9970-17c104bc696e.jpeg 202w,https://img-getpocket.cdn.mozilla.net/404x202/filters:format(jpeg):quality(60):no_upscale():strip_exif()/https%3A%2F%2Fs3.us-east-1.amazonaws.com%2Fpocket-curatedcorpusapi-prod-images%2F2e4c7245-39bf-4dcc-9970-17c104bc696e.jpeg 404w"/></picture></div><a href="https://news.abplive.com/business/imf-india-economy-growth-prediction-reforms-needed-risks-india-needs-to-invest-in-education-healthcare-to-continue-as-fastest-growing-economy-globally-says-imf-official-1681317?utm_source=pocket-newtab-en-intl" title="India Needs to Invest in Education, Healthcare to Continue As Fastest-Growing Economy Globally, Says IMF Official" class="ds-card-link"><div class="impression-observer"></div></a><div class="meta"><div class="info-wrap"><p class="source clamp">ABP Live</p><header class="title clamp">India Needs to Invest in Education, Healthcare to Continue As Fastest-Growing Economy Globally, Says IMF Official</header><p class="excerpt clamp">The International Monetary Fund in its latest World Economic Outlook edition said that India is estimated to grow at 6.8 per cent FY24 and maintain a growth rate of 6.5 per cent in FY25</p></div></div><div class="card-stp-button-hover-background"><div class="card-stp-button-position-wrapper"><button class="card-stp-button"><span class="story-badge-icon icon icon-pocket-save"></span><span data-l10n-id="newtab-pocket-save"></span></button><div class="context-menu-position-container"><button aria-haspopup="true" data-l10n-id="newtab-menu-content-tooltip" data-l10n-args="{&quot;title&quot;:&quot;India Needs to Invest in Education, Healthcare to Continue As Fastest-Growing Economy Globally, Says IMF Official&quot;}" class="context-menu-button icon"></button></div></div></div></article><article class="ds-card   ds-card-title-lines-3 ds-card-desc-lines-3  "><div class="img-wrapper"><picture class="ds-image
+       img
+      
+      
+    "><img loading="lazy" crossorigin="anonymous" sizes="(min-width: 1122px) 296px,(min-width: 866px) 218px,(max-width: 610px) 202px,202px" src="https://s3.us-east-1.amazonaws.com/pocket-curatedcorpusapi-prod-images/28bf1f8f-f415-4cbd-9bfc-62404f09f66b.jpeg" srcSet="https://img-getpocket.cdn.mozilla.net/296x148/filters:format(jpeg):quality(60):no_upscale():strip_exif()/https%3A%2F%2Fs3.us-east-1.amazonaws.com%2Fpocket-curatedcorpusapi-prod-images%2F28bf1f8f-f415-4cbd-9bfc-62404f09f66b.jpeg 296w,https://img-getpocket.cdn.mozilla.net/592x296/filters:format(jpeg):quality(60):no_upscale():strip_exif()/https%3A%2F%2Fs3.us-east-1.amazonaws.com%2Fpocket-curatedcorpusapi-prod-images%2F28bf1f8f-f415-4cbd-9bfc-62404f09f66b.jpeg 592w,https://img-getpocket.cdn.mozilla.net/218x109/filters:format(jpeg):quality(60):no_upscale():strip_exif()/https%3A%2F%2Fs3.us-east-1.amazonaws.com%2Fpocket-curatedcorpusapi-prod-images%2F28bf1f8f-f415-4cbd-9bfc-62404f09f66b.jpeg 218w,https://img-getpocket.cdn.mozilla.net/436x218/filters:format(jpeg):quality(60):no_upscale():strip_exif()/https%3A%2F%2Fs3.us-east-1.amazonaws.com%2Fpocket-curatedcorpusapi-prod-images%2F28bf1f8f-f415-4cbd-9bfc-62404f09f66b.jpeg 436w,https://img-getpocket.cdn.mozilla.net/202x101/filters:format(jpeg):quality(60):no_upscale():strip_exif()/https%3A%2F%2Fs3.us-east-1.amazonaws.com%2Fpocket-curatedcorpusapi-prod-images%2F28bf1f8f-f415-4cbd-9bfc-62404f09f66b.jpeg 202w,https://img-getpocket.cdn.mozilla.net/404x202/filters:format(jpeg):quality(60):no_upscale():strip_exif()/https%3A%2F%2Fs3.us-east-1.amazonaws.com%2Fpocket-curatedcorpusapi-prod-images%2F28bf1f8f-f415-4cbd-9bfc-62404f09f66b.jpeg 404w"/></picture></div><a href="https://timesofindia.indiatimes.com/entertainment/hindi/bollywood/news/first-hollywood-and-now-world-cinema-doing-well-in-india-speak-of-a-discerning-and-receptive-audience/articleshow/109449491.cms?utm_source=pocket-newtab-en-intl" title="First Hollywood, and Now World Cinema Doing Well in India Speak of a Discerning and Receptive Audience" class="ds-card-link"><div class="impression-observer"></div></a><div class="meta"><div class="info-wrap"><p class="source clamp">The Times of India</p><header class="title clamp">First Hollywood, and Now World Cinema Doing Well in India Speak of a Discerning and Receptive Audience</header><p class="excerpt clamp">When Titanic was released in 1997, there was only one print in entire Delhi. There was a time, not so long ago, when only Hindi movies used to play at the single screen cinemas in India.</p></div></div><div class="card-stp-button-hover-background"><div class="card-stp-button-position-wrapper"><button class="card-stp-button"><span class="story-badge-icon icon icon-pocket-save"></span><span data-l10n-id="newtab-pocket-save"></span></button><div class="context-menu-position-container"><button aria-haspopup="true" data-l10n-id="newtab-menu-content-tooltip" data-l10n-args="{&quot;title&quot;:&quot;First Hollywood, and Now World Cinema Doing Well in India Speak of a Discerning and Receptive Audience&quot;}" class="context-menu-button icon"></button></div></div></div></article><article class="ds-card   ds-card-title-lines-3 ds-card-desc-lines-3  "><div class="img-wrapper"><picture class="ds-image
+       img
+      
+      
+    "><img loading="lazy" crossorigin="anonymous" sizes="(min-width: 1122px) 296px,(min-width: 866px) 218px,(max-width: 610px) 202px,202px" src="https://s3.us-east-1.amazonaws.com/pocket-curatedcorpusapi-prod-images/7f883a29-deca-47ed-8f2a-68807025c19f.jpeg" srcSet="https://img-getpocket.cdn.mozilla.net/296x148/filters:format(jpeg):quality(60):no_upscale():strip_exif()/https%3A%2F%2Fs3.us-east-1.amazonaws.com%2Fpocket-curatedcorpusapi-prod-images%2F7f883a29-deca-47ed-8f2a-68807025c19f.jpeg 296w,https://img-getpocket.cdn.mozilla.net/592x296/filters:format(jpeg):quality(60):no_upscale():strip_exif()/https%3A%2F%2Fs3.us-east-1.amazonaws.com%2Fpocket-curatedcorpusapi-prod-images%2F7f883a29-deca-47ed-8f2a-68807025c19f.jpeg 592w,https://img-getpocket.cdn.mozilla.net/218x109/filters:format(jpeg):quality(60):no_upscale():strip_exif()/https%3A%2F%2Fs3.us-east-1.amazonaws.com%2Fpocket-curatedcorpusapi-prod-images%2F7f883a29-deca-47ed-8f2a-68807025c19f.jpeg 218w,https://img-getpocket.cdn.mozilla.net/436x218/filters:format(jpeg):quality(60):no_upscale():strip_exif()/https%3A%2F%2Fs3.us-east-1.amazonaws.com%2Fpocket-curatedcorpusapi-prod-images%2F7f883a29-deca-47ed-8f2a-68807025c19f.jpeg 436w,https://img-getpocket.cdn.mozilla.net/202x101/filters:format(jpeg):quality(60):no_upscale():strip_exif()/https%3A%2F%2Fs3.us-east-1.amazonaws.com%2Fpocket-curatedcorpusapi-prod-images%2F7f883a29-deca-47ed-8f2a-68807025c19f.jpeg 202w,https://img-getpocket.cdn.mozilla.net/404x202/filters:format(jpeg):quality(60):no_upscale():strip_exif()/https%3A%2F%2Fs3.us-east-1.amazonaws.com%2Fpocket-curatedcorpusapi-prod-images%2F7f883a29-deca-47ed-8f2a-68807025c19f.jpeg 404w"/></picture></div><a href="https://www.cnbc.com/2024/04/21/cricket-big-business-in-india-brings-star-power-to-us-with-world-cup.html?utm_source=pocket-newtab-en-intl" title="Cricket, a Big Business in India, Brings Star Power to the U.S. With the Country’s First World Cup" class="ds-card-link"><div class="impression-observer"></div></a><div class="meta"><div class="info-wrap"><p class="source clamp">CNBC</p><header class="title clamp">Cricket, a Big Business in India, Brings Star Power to the U.S. With the Country’s First World Cup</header><p class="excerpt clamp">A cricket world cup is arriving in the U.S. for the first time as the country explores its future with the sport.</p></div></div><div class="card-stp-button-hover-background"><div class="card-stp-button-position-wrapper"><button class="card-stp-button"><span class="story-badge-icon icon icon-pocket-save"></span><span data-l10n-id="newtab-pocket-save"></span></button><div class="context-menu-position-container"><button aria-haspopup="true" data-l10n-id="newtab-menu-content-tooltip" data-l10n-args="{&quot;title&quot;:&quot;Cricket, a Big Business in India, Brings Star Power to the U.S. With the Country’s First World Cup&quot;}" class="context-menu-button icon"></button></div></div></div></article><article class="ds-card   ds-card-title-lines-3 ds-card-desc-lines-3  "><div class="img-wrapper"><picture class="ds-image
+       img
+      
+      
+    "><img loading="lazy" crossorigin="anonymous" sizes="(min-width: 1122px) 296px,(min-width: 866px) 218px,(max-width: 610px) 202px,202px" src="https://s3.us-east-1.amazonaws.com/pocket-curatedcorpusapi-prod-images/023b3feb-8015-471a-9614-5647162e16f4.jpeg" srcSet="https://img-getpocket.cdn.mozilla.net/296x148/filters:format(jpeg):quality(60):no_upscale():strip_exif()/https%3A%2F%2Fs3.us-east-1.amazonaws.com%2Fpocket-curatedcorpusapi-prod-images%2F023b3feb-8015-471a-9614-5647162e16f4.jpeg 296w,https://img-getpocket.cdn.mozilla.net/592x296/filters:format(jpeg):quality(60):no_upscale():strip_exif()/https%3A%2F%2Fs3.us-east-1.amazonaws.com%2Fpocket-curatedcorpusapi-prod-images%2F023b3feb-8015-471a-9614-5647162e16f4.jpeg 592w,https://img-getpocket.cdn.mozilla.net/218x109/filters:format(jpeg):quality(60):no_upscale():strip_exif()/https%3A%2F%2Fs3.us-east-1.amazonaws.com%2Fpocket-curatedcorpusapi-prod-images%2F023b3feb-8015-471a-9614-5647162e16f4.jpeg 218w,https://img-getpocket.cdn.mozilla.net/436x218/filters:format(jpeg):quality(60):no_upscale():strip_exif()/https%3A%2F%2Fs3.us-east-1.amazonaws.com%2Fpocket-curatedcorpusapi-prod-images%2F023b3feb-8015-471a-9614-5647162e16f4.jpeg 436w,https://img-getpocket.cdn.mozilla.net/202x101/filters:format(jpeg):quality(60):no_upscale():strip_exif()/https%3A%2F%2Fs3.us-east-1.amazonaws.com%2Fpocket-curatedcorpusapi-prod-images%2F023b3feb-8015-471a-9614-5647162e16f4.jpeg 202w,https://img-getpocket.cdn.mozilla.net/404x202/filters:format(jpeg):quality(60):no_upscale():strip_exif()/https%3A%2F%2Fs3.us-east-1.amazonaws.com%2Fpocket-curatedcorpusapi-prod-images%2F023b3feb-8015-471a-9614-5647162e16f4.jpeg 404w"/></picture></div><a href="https://www.deccanherald.com/business/jobs-and-careers/india-s-jobs-vs-education-conundrum-needs-a-deeper-fix-2979531?utm_source=pocket-newtab-en-intl" title="India’s Jobs Vs Education Conundrum Needs a Deeper Fix" class="ds-card-link"><div class="impression-observer"></div></a><div class="meta"><div class="info-wrap"><p class="source clamp">Deccan Herald</p><header class="title clamp">India’s Jobs Vs Education Conundrum Needs a Deeper Fix</header><p class="excerpt clamp">This youthful workforce has the potential to drive economic growth, innovation, and productivity. However, the recent India Employment Report 2024, jointly published by the International Labour Organisation and the Institute of Human Development, paints an alarming picture.</p></div></div><div class="card-stp-button-hover-background"><div class="card-stp-button-position-wrapper"><button class="card-stp-button"><span class="story-badge-icon icon icon-pocket-save"></span><span data-l10n-id="newtab-pocket-save"></span></button><div class="context-menu-position-container"><button aria-haspopup="true" data-l10n-id="newtab-menu-content-tooltip" data-l10n-args="{&quot;title&quot;:&quot;India’s Jobs Vs Education Conundrum Needs a Deeper Fix&quot;}" class="context-menu-button icon"></button></div></div></div></article><article class="ds-card   ds-card-title-lines-3 ds-card-desc-lines-3  "><div class="img-wrapper"><picture class="ds-image
+       img
+      
+      
+    "><img loading="lazy" crossorigin="anonymous" sizes="(min-width: 1122px) 296px,(min-width: 866px) 218px,(max-width: 610px) 202px,202px" src="https://s3.us-east-1.amazonaws.com/pocket-curatedcorpusapi-prod-images/3b6a3e0d-7872-4d29-8b54-8359a0e5c662.jpeg" srcSet="https://img-getpocket.cdn.mozilla.net/296x148/filters:format(jpeg):quality(60):no_upscale():strip_exif()/https%3A%2F%2Fs3.us-east-1.amazonaws.com%2Fpocket-curatedcorpusapi-prod-images%2F3b6a3e0d-7872-4d29-8b54-8359a0e5c662.jpeg 296w,https://img-getpocket.cdn.mozilla.net/592x296/filters:format(jpeg):quality(60):no_upscale():strip_exif()/https%3A%2F%2Fs3.us-east-1.amazonaws.com%2Fpocket-curatedcorpusapi-prod-images%2F3b6a3e0d-7872-4d29-8b54-8359a0e5c662.jpeg 592w,https://img-getpocket.cdn.mozilla.net/218x109/filters:format(jpeg):quality(60):no_upscale():strip_exif()/https%3A%2F%2Fs3.us-east-1.amazonaws.com%2Fpocket-curatedcorpusapi-prod-images%2F3b6a3e0d-7872-4d29-8b54-8359a0e5c662.jpeg 218w,https://img-getpocket.cdn.mozilla.net/436x218/filters:format(jpeg):quality(60):no_upscale():strip_exif()/https%3A%2F%2Fs3.us-east-1.amazonaws.com%2Fpocket-curatedcorpusapi-prod-images%2F3b6a3e0d-7872-4d29-8b54-8359a0e5c662.jpeg 436w,https://img-getpocket.cdn.mozilla.net/202x101/filters:format(jpeg):quality(60):no_upscale():strip_exif()/https%3A%2F%2Fs3.us-east-1.amazonaws.com%2Fpocket-curatedcorpusapi-prod-images%2F3b6a3e0d-7872-4d29-8b54-8359a0e5c662.jpeg 202w,https://img-getpocket.cdn.mozilla.net/404x202/filters:format(jpeg):quality(60):no_upscale():strip_exif()/https%3A%2F%2Fs3.us-east-1.amazonaws.com%2Fpocket-curatedcorpusapi-prod-images%2F3b6a3e0d-7872-4d29-8b54-8359a0e5c662.jpeg 404w"/></picture></div><a href="https://www.fortuneindia.com/opinion/chinas-api-extortion-from-indian-pharma-breaking-down/116490?utm_source=pocket-newtab-en-intl" title="China’s API Extortion From Indian Pharma Breaking Down" class="ds-card-link"><div class="impression-observer"></div></a><div class="meta"><div class="info-wrap"><p class="source clamp">Fortune India</p><header class="title clamp">China’s API Extortion From Indian Pharma Breaking Down</header><p class="excerpt clamp">The API coming from China started getting dumped in India at very low prices.</p></div></div><div class="card-stp-button-hover-background"><div class="card-stp-button-position-wrapper"><button class="card-stp-button"><span class="story-badge-icon icon icon-pocket-save"></span><span data-l10n-id="newtab-pocket-save"></span></button><div class="context-menu-position-container"><button aria-haspopup="true" data-l10n-id="newtab-menu-content-tooltip" data-l10n-args="{&quot;title&quot;:&quot;China’s API Extortion From Indian Pharma Breaking Down&quot;}" class="context-menu-button icon"></button></div></div></div></article><article class="ds-card   ds-card-title-lines-3 ds-card-desc-lines-3  "><div class="img-wrapper"><picture class="ds-image
+       img
+      
+      
+    "><img loading="lazy" crossorigin="anonymous" sizes="(min-width: 1122px) 296px,(min-width: 866px) 218px,(max-width: 610px) 202px,202px" src="https://s3.us-east-1.amazonaws.com/pocket-curatedcorpusapi-prod-images/92194a64-7877-4962-b1b4-c7d438a0b57f.jpeg" srcSet="https://img-getpocket.cdn.mozilla.net/296x148/filters:format(jpeg):quality(60):no_upscale():strip_exif()/https%3A%2F%2Fs3.us-east-1.amazonaws.com%2Fpocket-curatedcorpusapi-prod-images%2F92194a64-7877-4962-b1b4-c7d438a0b57f.jpeg 296w,https://img-getpocket.cdn.mozilla.net/592x296/filters:format(jpeg):quality(60):no_upscale():strip_exif()/https%3A%2F%2Fs3.us-east-1.amazonaws.com%2Fpocket-curatedcorpusapi-prod-images%2F92194a64-7877-4962-b1b4-c7d438a0b57f.jpeg 592w,https://img-getpocket.cdn.mozilla.net/218x109/filters:format(jpeg):quality(60):no_upscale():strip_exif()/https%3A%2F%2Fs3.us-east-1.amazonaws.com%2Fpocket-curatedcorpusapi-prod-images%2F92194a64-7877-4962-b1b4-c7d438a0b57f.jpeg 218w,https://img-getpocket.cdn.mozilla.net/436x218/filters:format(jpeg):quality(60):no_upscale():strip_exif()/https%3A%2F%2Fs3.us-east-1.amazonaws.com%2Fpocket-curatedcorpusapi-prod-images%2F92194a64-7877-4962-b1b4-c7d438a0b57f.jpeg 436w,https://img-getpocket.cdn.mozilla.net/202x101/filters:format(jpeg):quality(60):no_upscale():strip_exif()/https%3A%2F%2Fs3.us-east-1.amazonaws.com%2Fpocket-curatedcorpusapi-prod-images%2F92194a64-7877-4962-b1b4-c7d438a0b57f.jpeg 202w,https://img-getpocket.cdn.mozilla.net/404x202/filters:format(jpeg):quality(60):no_upscale():strip_exif()/https%3A%2F%2Fs3.us-east-1.amazonaws.com%2Fpocket-curatedcorpusapi-prod-images%2F92194a64-7877-4962-b1b4-c7d438a0b57f.jpeg 404w"/></picture></div><a href="https://www.spectator.co.uk/article/life-lessons-from-the-oldest-people-in-the-world/?utm_source=pocket-newtab-en-intl" title="Life lessons from the oldest people in the world" class="ds-card-link"><div class="impression-observer"></div></a><div class="meta"><div class="info-wrap"><p class="source clamp">The Spectator</p><header class="title clamp">Life lessons from the oldest people in the world</header><p class="excerpt clamp">María Branyas Morera, aged 117, is the oldest person in the world. She was born in California on 4 March 1907 to Spanish parents who decided to return home in 1915.</p></div></div><div class="card-stp-button-hover-background"><div class="card-stp-button-position-wrapper"><button class="card-stp-button"><span class="story-badge-icon icon icon-pocket-save"></span><span data-l10n-id="newtab-pocket-save"></span></button><div class="context-menu-position-container"><button aria-haspopup="true" data-l10n-id="newtab-menu-content-tooltip" data-l10n-args="{&quot;title&quot;:&quot;Life lessons from the oldest people in the world&quot;}" class="context-menu-button icon"></button></div></div></div></article><article class="ds-card   ds-card-title-lines-3 ds-card-desc-lines-3  "><div class="img-wrapper"><picture class="ds-image
+       img
+      
+      
+    "><img loading="lazy" crossorigin="anonymous" sizes="(min-width: 1122px) 296px,(min-width: 866px) 218px,(max-width: 610px) 202px,202px" src="https://i0.wp.com/dariusforoux.com/wp-content/uploads/2024/04/Investing-Decisions.png?fit=2048%2C1536&amp;ssl=1" srcSet="https://img-getpocket.cdn.mozilla.net/296x148/filters:format(jpeg):quality(60):no_upscale():strip_exif()/https%3A%2F%2Fi0.wp.com%2Fdariusforoux.com%2Fwp-content%2Fuploads%2F2024%2F04%2FInvesting-Decisions.png%3Ffit%3D2048%252C1536%26ssl%3D1 296w,https://img-getpocket.cdn.mozilla.net/592x296/filters:format(jpeg):quality(60):no_upscale():strip_exif()/https%3A%2F%2Fi0.wp.com%2Fdariusforoux.com%2Fwp-content%2Fuploads%2F2024%2F04%2FInvesting-Decisions.png%3Ffit%3D2048%252C1536%26ssl%3D1 592w,https://img-getpocket.cdn.mozilla.net/218x109/filters:format(jpeg):quality(60):no_upscale():strip_exif()/https%3A%2F%2Fi0.wp.com%2Fdariusforoux.com%2Fwp-content%2Fuploads%2F2024%2F04%2FInvesting-Decisions.png%3Ffit%3D2048%252C1536%26ssl%3D1 218w,https://img-getpocket.cdn.mozilla.net/436x218/filters:format(jpeg):quality(60):no_upscale():strip_exif()/https%3A%2F%2Fi0.wp.com%2Fdariusforoux.com%2Fwp-content%2Fuploads%2F2024%2F04%2FInvesting-Decisions.png%3Ffit%3D2048%252C1536%26ssl%3D1 436w,https://img-getpocket.cdn.mozilla.net/202x101/filters:format(jpeg):quality(60):no_upscale():strip_exif()/https%3A%2F%2Fi0.wp.com%2Fdariusforoux.com%2Fwp-content%2Fuploads%2F2024%2F04%2FInvesting-Decisions.png%3Ffit%3D2048%252C1536%26ssl%3D1 202w,https://img-getpocket.cdn.mozilla.net/404x202/filters:format(jpeg):quality(60):no_upscale():strip_exif()/https%3A%2F%2Fi0.wp.com%2Fdariusforoux.com%2Fwp-content%2Fuploads%2F2024%2F04%2FInvesting-Decisions.png%3Ffit%3D2048%252C1536%26ssl%3D1 404w"/></picture></div><a href="https://dariusforoux.com/investing-decisions-questions/?utm_source=pocket-newtab-en-intl" title="12 Simple Questions You Should Ask Before Making Investing Decisions" class="ds-card-link"><div class="impression-observer"></div></a><div class="meta"><div class="info-wrap"><p class="source clamp">Darius Foroux</p><header class="title clamp">12 Simple Questions You Should Ask Before Making Investing Decisions</header><p class="excerpt clamp">How do you make the right investing decisions? It’s all about yourself asking the right questions and making hard simple.</p></div></div><div class="card-stp-button-hover-background"><div class="card-stp-button-position-wrapper"><button class="card-stp-button"><span class="story-badge-icon icon icon-pocket-save"></span><span data-l10n-id="newtab-pocket-save"></span></button><div class="context-menu-position-container"><button aria-haspopup="true" data-l10n-id="newtab-menu-content-tooltip" data-l10n-args="{&quot;title&quot;:&quot;12 Simple Questions You Should Ask Before Making Investing Decisions&quot;}" class="context-menu-button icon"></button></div></div></div></article><article class="ds-card   ds-card-title-lines-3 ds-card-desc-lines-3  "><div class="img-wrapper"><picture class="ds-image
+       img
+      
+      
+    "><img loading="lazy" crossorigin="anonymous" sizes="(min-width: 1122px) 296px,(min-width: 866px) 218px,(max-width: 610px) 202px,202px" src="https://s3.us-east-1.amazonaws.com/pocket-curatedcorpusapi-prod-images/d886acd2-42b1-4ddf-901d-0ca750d35688.jpeg" srcSet="https://img-getpocket.cdn.mozilla.net/296x148/filters:format(jpeg):quality(60):no_upscale():strip_exif()/https%3A%2F%2Fs3.us-east-1.amazonaws.com%2Fpocket-curatedcorpusapi-prod-images%2Fd886acd2-42b1-4ddf-901d-0ca750d35688.jpeg 296w,https://img-getpocket.cdn.mozilla.net/592x296/filters:format(jpeg):quality(60):no_upscale():strip_exif()/https%3A%2F%2Fs3.us-east-1.amazonaws.com%2Fpocket-curatedcorpusapi-prod-images%2Fd886acd2-42b1-4ddf-901d-0ca750d35688.jpeg 592w,https://img-getpocket.cdn.mozilla.net/218x109/filters:format(jpeg):quality(60):no_upscale():strip_exif()/https%3A%2F%2Fs3.us-east-1.amazonaws.com%2Fpocket-curatedcorpusapi-prod-images%2Fd886acd2-42b1-4ddf-901d-0ca750d35688.jpeg 218w,https://img-getpocket.cdn.mozilla.net/436x218/filters:format(jpeg):quality(60):no_upscale():strip_exif()/https%3A%2F%2Fs3.us-east-1.amazonaws.com%2Fpocket-curatedcorpusapi-prod-images%2Fd886acd2-42b1-4ddf-901d-0ca750d35688.jpeg 436w,https://img-getpocket.cdn.mozilla.net/202x101/filters:format(jpeg):quality(60):no_upscale():strip_exif()/https%3A%2F%2Fs3.us-east-1.amazonaws.com%2Fpocket-curatedcorpusapi-prod-images%2Fd886acd2-42b1-4ddf-901d-0ca750d35688.jpeg 202w,https://img-getpocket.cdn.mozilla.net/404x202/filters:format(jpeg):quality(60):no_upscale():strip_exif()/https%3A%2F%2Fs3.us-east-1.amazonaws.com%2Fpocket-curatedcorpusapi-prod-images%2Fd886acd2-42b1-4ddf-901d-0ca750d35688.jpeg 404w"/></picture></div><a href="https://www.theguardian.com/fashion/2024/apr/16/super-cute-please-like-the-unstoppable-rise-of-shein?utm_source=pocket-newtab-en-intl" title="‘Super Cute Please Like’: The Unstoppable Rise of Shein" class="ds-card-link"><div class="impression-observer"></div></a><div class="meta"><div class="info-wrap"><p class="source clamp">The Guardian</p><header class="title clamp">‘Super Cute Please Like’: The Unstoppable Rise of Shein</header><p class="excerpt clamp">It is taking fast fashion to ever faster and ever cheaper extremes, and making billions from it. Why is the whole world shopping at Shein?</p></div></div><div class="card-stp-button-hover-background"><div class="card-stp-button-position-wrapper"><button class="card-stp-button"><span class="story-badge-icon icon icon-pocket-save"></span><span data-l10n-id="newtab-pocket-save"></span></button><div class="context-menu-position-container"><button aria-haspopup="true" data-l10n-id="newtab-menu-content-tooltip" data-l10n-args="{&quot;title&quot;:&quot;‘Super Cute Please Like’: The Unstoppable Rise of Shein&quot;}" class="context-menu-button icon"></button></div></div></div></article><article class="ds-card   ds-card-title-lines-3 ds-card-desc-lines-3  "><div class="img-wrapper"><picture class="ds-image
+       img
+      
+      
+    "><img loading="lazy" crossorigin="anonymous" sizes="(min-width: 1122px) 296px,(min-width: 866px) 218px,(max-width: 610px) 202px,202px" src="https://s3.us-east-1.amazonaws.com/pocket-curatedcorpusapi-prod-images/7b5f33e5-4882-46cb-b709-01c0fc3feece.jpeg" srcSet="https://img-getpocket.cdn.mozilla.net/296x148/filters:format(jpeg):quality(60):no_upscale():strip_exif()/https%3A%2F%2Fs3.us-east-1.amazonaws.com%2Fpocket-curatedcorpusapi-prod-images%2F7b5f33e5-4882-46cb-b709-01c0fc3feece.jpeg 296w,https://img-getpocket.cdn.mozilla.net/592x296/filters:format(jpeg):quality(60):no_upscale():strip_exif()/https%3A%2F%2Fs3.us-east-1.amazonaws.com%2Fpocket-curatedcorpusapi-prod-images%2F7b5f33e5-4882-46cb-b709-01c0fc3feece.jpeg 592w,https://img-getpocket.cdn.mozilla.net/218x109/filters:format(jpeg):quality(60):no_upscale():strip_exif()/https%3A%2F%2Fs3.us-east-1.amazonaws.com%2Fpocket-curatedcorpusapi-prod-images%2F7b5f33e5-4882-46cb-b709-01c0fc3feece.jpeg 218w,https://img-getpocket.cdn.mozilla.net/436x218/filters:format(jpeg):quality(60):no_upscale():strip_exif()/https%3A%2F%2Fs3.us-east-1.amazonaws.com%2Fpocket-curatedcorpusapi-prod-images%2F7b5f33e5-4882-46cb-b709-01c0fc3feece.jpeg 436w,https://img-getpocket.cdn.mozilla.net/202x101/filters:format(jpeg):quality(60):no_upscale():strip_exif()/https%3A%2F%2Fs3.us-east-1.amazonaws.com%2Fpocket-curatedcorpusapi-prod-images%2F7b5f33e5-4882-46cb-b709-01c0fc3feece.jpeg 202w,https://img-getpocket.cdn.mozilla.net/404x202/filters:format(jpeg):quality(60):no_upscale():strip_exif()/https%3A%2F%2Fs3.us-east-1.amazonaws.com%2Fpocket-curatedcorpusapi-prod-images%2F7b5f33e5-4882-46cb-b709-01c0fc3feece.jpeg 404w"/></picture></div><a href="https://mashable.com/article/alien-planet-life-purple?utm_source=pocket-newtab-en-intl" title="Alien Planets Might Teem With Purple — Yes, Purple — Life" class="ds-card-link"><div class="impression-observer"></div></a><div class="meta"><div class="info-wrap"><p class="source clamp">Mashable</p><header class="title clamp">Alien Planets Might Teem With Purple — Yes, Purple — Life</header><p class="excerpt clamp">NASA has already spotted a diversity of rocky, Earth-like worlds in the cosmos. But unlike our verdant planet, many of these worlds may flourish with purple life — if life exists out there, that is.</p></div></div><div class="card-stp-button-hover-background"><div class="card-stp-button-position-wrapper"><button class="card-stp-button"><span class="story-badge-icon icon icon-pocket-save"></span><span data-l10n-id="newtab-pocket-save"></span></button><div class="context-menu-position-container"><button aria-haspopup="true" data-l10n-id="newtab-menu-content-tooltip" data-l10n-args="{&quot;title&quot;:&quot;Alien Planets Might Teem With Purple — Yes, Purple — Life&quot;}" class="context-menu-button icon"></button></div></div></div></article><article class="ds-card   ds-card-title-lines-3 ds-card-desc-lines-3  "><div class="img-wrapper"><picture class="ds-image
+       img
+      
+      
+    "><img loading="lazy" crossorigin="anonymous" sizes="(min-width: 1122px) 296px,(min-width: 866px) 218px,(max-width: 610px) 202px,202px" src="https://s3.us-east-1.amazonaws.com/pocket-curatedcorpusapi-prod-images/4fb468d5-e56c-4940-9e3d-c6d68f358a84.jpeg" srcSet="https://img-getpocket.cdn.mozilla.net/296x148/filters:format(jpeg):quality(60):no_upscale():strip_exif()/https%3A%2F%2Fs3.us-east-1.amazonaws.com%2Fpocket-curatedcorpusapi-prod-images%2F4fb468d5-e56c-4940-9e3d-c6d68f358a84.jpeg 296w,https://img-getpocket.cdn.mozilla.net/592x296/filters:format(jpeg):quality(60):no_upscale():strip_exif()/https%3A%2F%2Fs3.us-east-1.amazonaws.com%2Fpocket-curatedcorpusapi-prod-images%2F4fb468d5-e56c-4940-9e3d-c6d68f358a84.jpeg 592w,https://img-getpocket.cdn.mozilla.net/218x109/filters:format(jpeg):quality(60):no_upscale():strip_exif()/https%3A%2F%2Fs3.us-east-1.amazonaws.com%2Fpocket-curatedcorpusapi-prod-images%2F4fb468d5-e56c-4940-9e3d-c6d68f358a84.jpeg 218w,https://img-getpocket.cdn.mozilla.net/436x218/filters:format(jpeg):quality(60):no_upscale():strip_exif()/https%3A%2F%2Fs3.us-east-1.amazonaws.com%2Fpocket-curatedcorpusapi-prod-images%2F4fb468d5-e56c-4940-9e3d-c6d68f358a84.jpeg 436w,https://img-getpocket.cdn.mozilla.net/202x101/filters:format(jpeg):quality(60):no_upscale():strip_exif()/https%3A%2F%2Fs3.us-east-1.amazonaws.com%2Fpocket-curatedcorpusapi-prod-images%2F4fb468d5-e56c-4940-9e3d-c6d68f358a84.jpeg 202w,https://img-getpocket.cdn.mozilla.net/404x202/filters:format(jpeg):quality(60):no_upscale():strip_exif()/https%3A%2F%2Fs3.us-east-1.amazonaws.com%2Fpocket-curatedcorpusapi-prod-images%2F4fb468d5-e56c-4940-9e3d-c6d68f358a84.jpeg 404w"/></picture></div><a href="https://www.thehindu.com/sport/other-sports/vinesh-secures-womens-50kg-paris-olympics-quota-for-india/article68087991.ece?utm_source=pocket-newtab-en-intl" title="Vinesh, Reetika, Anshu secure Paris Olympics quotas for India" class="ds-card-link"><div class="impression-observer"></div></a><div class="meta"><div class="info-wrap"><p class="source clamp">The Hindu</p><header class="title clamp">Vinesh, Reetika, Anshu secure Paris Olympics quotas for India</header><p class="excerpt clamp">Making a strong comeback to international arena after leading a prolonged protest against former WFI chief Brij Bhushan Sharan Singh, celebrated Indian wrestler Vinesh Phogat locked Paris Olympics quota in women’s 50kg category with a strong show at the Asian Olympic Qualifier, in Bishkek on April</p></div></div><div class="card-stp-button-hover-background"><div class="card-stp-button-position-wrapper"><button class="card-stp-button"><span class="story-badge-icon icon icon-pocket-save"></span><span data-l10n-id="newtab-pocket-save"></span></button><div class="context-menu-position-container"><button aria-haspopup="true" data-l10n-id="newtab-menu-content-tooltip" data-l10n-args="{&quot;title&quot;:&quot;Vinesh, Reetika, Anshu secure Paris Olympics quotas for India&quot;}" class="context-menu-button icon"></button></div></div></div></article><article class="ds-card   ds-card-title-lines-3 ds-card-desc-lines-3  "><div class="img-wrapper"><picture class="ds-image
+       img
+      
+      
+    "><img loading="lazy" crossorigin="anonymous" sizes="(min-width: 1122px) 296px,(min-width: 866px) 218px,(max-width: 610px) 202px,202px" src="https://s3.us-east-1.amazonaws.com/pocket-curatedcorpusapi-prod-images/61d67d21-b682-4f1b-8a81-d6cdc2b4a6d4.jpeg" srcSet="https://img-getpocket.cdn.mozilla.net/296x148/filters:format(jpeg):quality(60):no_upscale():strip_exif()/https%3A%2F%2Fs3.us-east-1.amazonaws.com%2Fpocket-curatedcorpusapi-prod-images%2F61d67d21-b682-4f1b-8a81-d6cdc2b4a6d4.jpeg 296w,https://img-getpocket.cdn.mozilla.net/592x296/filters:format(jpeg):quality(60):no_upscale():strip_exif()/https%3A%2F%2Fs3.us-east-1.amazonaws.com%2Fpocket-curatedcorpusapi-prod-images%2F61d67d21-b682-4f1b-8a81-d6cdc2b4a6d4.jpeg 592w,https://img-getpocket.cdn.mozilla.net/218x109/filters:format(jpeg):quality(60):no_upscale():strip_exif()/https%3A%2F%2Fs3.us-east-1.amazonaws.com%2Fpocket-curatedcorpusapi-prod-images%2F61d67d21-b682-4f1b-8a81-d6cdc2b4a6d4.jpeg 218w,https://img-getpocket.cdn.mozilla.net/436x218/filters:format(jpeg):quality(60):no_upscale():strip_exif()/https%3A%2F%2Fs3.us-east-1.amazonaws.com%2Fpocket-curatedcorpusapi-prod-images%2F61d67d21-b682-4f1b-8a81-d6cdc2b4a6d4.jpeg 436w,https://img-getpocket.cdn.mozilla.net/202x101/filters:format(jpeg):quality(60):no_upscale():strip_exif()/https%3A%2F%2Fs3.us-east-1.amazonaws.com%2Fpocket-curatedcorpusapi-prod-images%2F61d67d21-b682-4f1b-8a81-d6cdc2b4a6d4.jpeg 202w,https://img-getpocket.cdn.mozilla.net/404x202/filters:format(jpeg):quality(60):no_upscale():strip_exif()/https%3A%2F%2Fs3.us-east-1.amazonaws.com%2Fpocket-curatedcorpusapi-prod-images%2F61d67d21-b682-4f1b-8a81-d6cdc2b4a6d4.jpeg 404w"/></picture></div><a href="https://www.vogue.com/article/taylor-swifts-trainer-reveals-her-eras-workout-routine?utm_source=pocket-newtab-en-intl" title="Taylor Swift’s Trainer Reveals Her Eras Workout Routine—And His Identity" class="ds-card-link"><div class="impression-observer"></div></a><div class="meta"><div class="info-wrap"><p class="source clamp">Vogue</p><header class="title clamp">Taylor Swift’s Trainer Reveals Her Eras Workout Routine—And His Identity</header><p class="excerpt clamp">Do we really have the same amount of hours in the day as Taylor Swift? It&#x27;s hard for me to imagine—she&#x27;s writing entire surprise albums while on the highest-grossing tour in history for a different Grammy-winning album; I&#x27;m having trouble balancing finishing my laundry, finding time to eat lunch,</p></div></div><div class="card-stp-button-hover-background"><div class="card-stp-button-position-wrapper"><button class="card-stp-button"><span class="story-badge-icon icon icon-pocket-save"></span><span data-l10n-id="newtab-pocket-save"></span></button><div class="context-menu-position-container"><button aria-haspopup="true" data-l10n-id="newtab-menu-content-tooltip" data-l10n-args="{&quot;title&quot;:&quot;Taylor Swift’s Trainer Reveals Her Eras Workout Routine—And His Identity&quot;}" class="context-menu-button icon"></button></div></div></div></article><article class="ds-card   ds-card-title-lines-3 ds-card-desc-lines-3  "><div class="img-wrapper"><picture class="ds-image
+       img
+      
+      
+    "><img loading="lazy" crossorigin="anonymous" sizes="(min-width: 1122px) 296px,(min-width: 866px) 218px,(max-width: 610px) 202px,202px" src="https://s3.us-east-1.amazonaws.com/pocket-curatedcorpusapi-prod-images/c206dbac-b33f-4f9e-941c-f824614e8b73.png" srcSet="https://img-getpocket.cdn.mozilla.net/296x148/filters:format(jpeg):quality(60):no_upscale():strip_exif()/https%3A%2F%2Fs3.us-east-1.amazonaws.com%2Fpocket-curatedcorpusapi-prod-images%2Fc206dbac-b33f-4f9e-941c-f824614e8b73.png 296w,https://img-getpocket.cdn.mozilla.net/592x296/filters:format(jpeg):quality(60):no_upscale():strip_exif()/https%3A%2F%2Fs3.us-east-1.amazonaws.com%2Fpocket-curatedcorpusapi-prod-images%2Fc206dbac-b33f-4f9e-941c-f824614e8b73.png 592w,https://img-getpocket.cdn.mozilla.net/218x109/filters:format(jpeg):quality(60):no_upscale():strip_exif()/https%3A%2F%2Fs3.us-east-1.amazonaws.com%2Fpocket-curatedcorpusapi-prod-images%2Fc206dbac-b33f-4f9e-941c-f824614e8b73.png 218w,https://img-getpocket.cdn.mozilla.net/436x218/filters:format(jpeg):quality(60):no_upscale():strip_exif()/https%3A%2F%2Fs3.us-east-1.amazonaws.com%2Fpocket-curatedcorpusapi-prod-images%2Fc206dbac-b33f-4f9e-941c-f824614e8b73.png 436w,https://img-getpocket.cdn.mozilla.net/202x101/filters:format(jpeg):quality(60):no_upscale():strip_exif()/https%3A%2F%2Fs3.us-east-1.amazonaws.com%2Fpocket-curatedcorpusapi-prod-images%2Fc206dbac-b33f-4f9e-941c-f824614e8b73.png 202w,https://img-getpocket.cdn.mozilla.net/404x202/filters:format(jpeg):quality(60):no_upscale():strip_exif()/https%3A%2F%2Fs3.us-east-1.amazonaws.com%2Fpocket-curatedcorpusapi-prod-images%2Fc206dbac-b33f-4f9e-941c-f824614e8b73.png 404w"/></picture></div><a href="https://yourstory.com/2024/04/indian-environment-tech-sector-raised-total-funding-of-usd-73b-to-date?utm_source=pocket-newtab-en-intl" title="Indian environment tech sector has raised a total funding of $7.3B to date" class="ds-card-link"><div class="impression-observer"></div></a><div class="meta"><div class="info-wrap"><p class="source clamp">YourStory</p><header class="title clamp">Indian environment tech sector has raised a total funding of $7.3B to date</header><p class="excerpt clamp">According to a report by data platform Tracxn, India&#x27;s environmental technology funding saw substantial growth between 2018 and 2022, surging from $0.23 billion to $2.47 billion.</p></div></div><div class="card-stp-button-hover-background"><div class="card-stp-button-position-wrapper"><button class="card-stp-button"><span class="story-badge-icon icon icon-pocket-save"></span><span data-l10n-id="newtab-pocket-save"></span></button><div class="context-menu-position-container"><button aria-haspopup="true" data-l10n-id="newtab-menu-content-tooltip" data-l10n-args="{&quot;title&quot;:&quot;Indian environment tech sector has raised a total funding of $7.3B to date&quot;}" class="context-menu-button icon"></button></div></div></div></article><article class="ds-card   ds-card-title-lines-3 ds-card-desc-lines-3  "><div class="img-wrapper"><picture class="ds-image
+       img
+      
+      
+    "><img loading="lazy" crossorigin="anonymous" sizes="(min-width: 1122px) 296px,(min-width: 866px) 218px,(max-width: 610px) 202px,202px" src="https://s3.us-east-1.amazonaws.com/pocket-curatedcorpusapi-prod-images/5ed0a186-6b08-4cf3-86d6-0e5787a3dafd.jpeg" srcSet="https://img-getpocket.cdn.mozilla.net/296x148/filters:format(jpeg):quality(60):no_upscale():strip_exif()/https%3A%2F%2Fs3.us-east-1.amazonaws.com%2Fpocket-curatedcorpusapi-prod-images%2F5ed0a186-6b08-4cf3-86d6-0e5787a3dafd.jpeg 296w,https://img-getpocket.cdn.mozilla.net/592x296/filters:format(jpeg):quality(60):no_upscale():strip_exif()/https%3A%2F%2Fs3.us-east-1.amazonaws.com%2Fpocket-curatedcorpusapi-prod-images%2F5ed0a186-6b08-4cf3-86d6-0e5787a3dafd.jpeg 592w,https://img-getpocket.cdn.mozilla.net/218x109/filters:format(jpeg):quality(60):no_upscale():strip_exif()/https%3A%2F%2Fs3.us-east-1.amazonaws.com%2Fpocket-curatedcorpusapi-prod-images%2F5ed0a186-6b08-4cf3-86d6-0e5787a3dafd.jpeg 218w,https://img-getpocket.cdn.mozilla.net/436x218/filters:format(jpeg):quality(60):no_upscale():strip_exif()/https%3A%2F%2Fs3.us-east-1.amazonaws.com%2Fpocket-curatedcorpusapi-prod-images%2F5ed0a186-6b08-4cf3-86d6-0e5787a3dafd.jpeg 436w,https://img-getpocket.cdn.mozilla.net/202x101/filters:format(jpeg):quality(60):no_upscale():strip_exif()/https%3A%2F%2Fs3.us-east-1.amazonaws.com%2Fpocket-curatedcorpusapi-prod-images%2F5ed0a186-6b08-4cf3-86d6-0e5787a3dafd.jpeg 202w,https://img-getpocket.cdn.mozilla.net/404x202/filters:format(jpeg):quality(60):no_upscale():strip_exif()/https%3A%2F%2Fs3.us-east-1.amazonaws.com%2Fpocket-curatedcorpusapi-prod-images%2F5ed0a186-6b08-4cf3-86d6-0e5787a3dafd.jpeg 404w"/></picture></div><a href="https://foreignpolicy.com/2024/04/08/india-generation-z-vote-modi-bjp-elections/?utm_source=pocket-newtab-en-intl" title="Meet India’s Generation Z" class="ds-card-link"><div class="impression-observer"></div></a><div class="meta"><div class="info-wrap"><p class="source clamp">Foreign Policy</p><header class="title clamp">Meet India’s Generation Z</header><p class="excerpt clamp">India changes more in five years than many countries would in a quarter century. This is partly because it is still relatively young: The country gained independence just 76 years ago, and nearly half of its population is under the age of 25.</p></div></div><div class="card-stp-button-hover-background"><div class="card-stp-button-position-wrapper"><button class="card-stp-button"><span class="story-badge-icon icon icon-pocket-save"></span><span data-l10n-id="newtab-pocket-save"></span></button><div class="context-menu-position-container"><button aria-haspopup="true" data-l10n-id="newtab-menu-content-tooltip" data-l10n-args="{&quot;title&quot;:&quot;Meet India’s Generation Z&quot;}" class="context-menu-button icon"></button></div></div></div></article><article class="ds-card   ds-card-title-lines-3 ds-card-desc-lines-3  "><div class="img-wrapper"><picture class="ds-image
+       img
+      
+      
+    "><img loading="lazy" crossorigin="anonymous" sizes="(min-width: 1122px) 296px,(min-width: 866px) 218px,(max-width: 610px) 202px,202px" src="https://i.guim.co.uk/img/media/233fd80023d33b7d456ab169af2a4f8490b5635f/0_168_3361_2017/master/3361.jpg?width=1200&amp;height=630&amp;quality=85&amp;auto=format&amp;fit=crop&amp;overlay-align=bottom%2Cleft&amp;overlay-width=100p&amp;overlay-base64=L2ltZy9zdGF0aWMvb3ZlcmxheXMvdGctZGVmYXVsdC5wbmc&amp;enable=upscale&amp;s=862a7e62d4375f206a7ef59a738e8a2c" srcSet="https://img-getpocket.cdn.mozilla.net/296x148/filters:format(jpeg):quality(60):no_upscale():strip_exif()/https%3A%2F%2Fi.guim.co.uk%2Fimg%2Fmedia%2F233fd80023d33b7d456ab169af2a4f8490b5635f%2F0_168_3361_2017%2Fmaster%2F3361.jpg%3Fwidth%3D1200%26height%3D630%26quality%3D85%26auto%3Dformat%26fit%3Dcrop%26overlay-align%3Dbottom%252Cleft%26overlay-width%3D100p%26overlay-base64%3DL2ltZy9zdGF0aWMvb3ZlcmxheXMvdGctZGVmYXVsdC5wbmc%26enable%3Dupscale%26s%3D862a7e62d4375f206a7ef59a738e8a2c 296w,https://img-getpocket.cdn.mozilla.net/592x296/filters:format(jpeg):quality(60):no_upscale():strip_exif()/https%3A%2F%2Fi.guim.co.uk%2Fimg%2Fmedia%2F233fd80023d33b7d456ab169af2a4f8490b5635f%2F0_168_3361_2017%2Fmaster%2F3361.jpg%3Fwidth%3D1200%26height%3D630%26quality%3D85%26auto%3Dformat%26fit%3Dcrop%26overlay-align%3Dbottom%252Cleft%26overlay-width%3D100p%26overlay-base64%3DL2ltZy9zdGF0aWMvb3ZlcmxheXMvdGctZGVmYXVsdC5wbmc%26enable%3Dupscale%26s%3D862a7e62d4375f206a7ef59a738e8a2c 592w,https://img-getpocket.cdn.mozilla.net/218x109/filters:format(jpeg):quality(60):no_upscale():strip_exif()/https%3A%2F%2Fi.guim.co.uk%2Fimg%2Fmedia%2F233fd80023d33b7d456ab169af2a4f8490b5635f%2F0_168_3361_2017%2Fmaster%2F3361.jpg%3Fwidth%3D1200%26height%3D630%26quality%3D85%26auto%3Dformat%26fit%3Dcrop%26overlay-align%3Dbottom%252Cleft%26overlay-width%3D100p%26overlay-base64%3DL2ltZy9zdGF0aWMvb3ZlcmxheXMvdGctZGVmYXVsdC5wbmc%26enable%3Dupscale%26s%3D862a7e62d4375f206a7ef59a738e8a2c 218w,https://img-getpocket.cdn.mozilla.net/436x218/filters:format(jpeg):quality(60):no_upscale():strip_exif()/https%3A%2F%2Fi.guim.co.uk%2Fimg%2Fmedia%2F233fd80023d33b7d456ab169af2a4f8490b5635f%2F0_168_3361_2017%2Fmaster%2F3361.jpg%3Fwidth%3D1200%26height%3D630%26quality%3D85%26auto%3Dformat%26fit%3Dcrop%26overlay-align%3Dbottom%252Cleft%26overlay-width%3D100p%26overlay-base64%3DL2ltZy9zdGF0aWMvb3ZlcmxheXMvdGctZGVmYXVsdC5wbmc%26enable%3Dupscale%26s%3D862a7e62d4375f206a7ef59a738e8a2c 436w,https://img-getpocket.cdn.mozilla.net/202x101/filters:format(jpeg):quality(60):no_upscale():strip_exif()/https%3A%2F%2Fi.guim.co.uk%2Fimg%2Fmedia%2F233fd80023d33b7d456ab169af2a4f8490b5635f%2F0_168_3361_2017%2Fmaster%2F3361.jpg%3Fwidth%3D1200%26height%3D630%26quality%3D85%26auto%3Dformat%26fit%3Dcrop%26overlay-align%3Dbottom%252Cleft%26overlay-width%3D100p%26overlay-base64%3DL2ltZy9zdGF0aWMvb3ZlcmxheXMvdGctZGVmYXVsdC5wbmc%26enable%3Dupscale%26s%3D862a7e62d4375f206a7ef59a738e8a2c 202w,https://img-getpocket.cdn.mozilla.net/404x202/filters:format(jpeg):quality(60):no_upscale():strip_exif()/https%3A%2F%2Fi.guim.co.uk%2Fimg%2Fmedia%2F233fd80023d33b7d456ab169af2a4f8490b5635f%2F0_168_3361_2017%2Fmaster%2F3361.jpg%3Fwidth%3D1200%26height%3D630%26quality%3D85%26auto%3Dformat%26fit%3Dcrop%26overlay-align%3Dbottom%252Cleft%26overlay-width%3D100p%26overlay-base64%3DL2ltZy9zdGF0aWMvb3ZlcmxheXMvdGctZGVmYXVsdC5wbmc%26enable%3Dupscale%26s%3D862a7e62d4375f206a7ef59a738e8a2c 404w"/></picture></div><a href="https://www.theguardian.com/world/2024/apr/19/messianic-spell-how-narendra-modi-created-a-cult-personality?utm_source=pocket-newtab-en-intl" title="How Narendra Modi Created a Cult of Personality" class="ds-card-link"><div class="impression-observer"></div></a><div class="meta"><div class="info-wrap"><p class="source clamp">The Guardian</p><header class="title clamp">How Narendra Modi Created a Cult of Personality</header><p class="excerpt clamp">Experts say Indian PM is hoping to be ‘bigger than Gandhi’ as he aims to win a third term in office.</p></div></div><div class="card-stp-button-hover-background"><div class="card-stp-button-position-wrapper"><button class="card-stp-button"><span class="story-badge-icon icon icon-pocket-save"></span><span data-l10n-id="newtab-pocket-save"></span></button><div class="context-menu-position-container"><button aria-haspopup="true" data-l10n-id="newtab-menu-content-tooltip" data-l10n-args="{&quot;title&quot;:&quot;How Narendra Modi Created a Cult of Personality&quot;}" class="context-menu-button icon"></button></div></div></div></article><article class="ds-card   ds-card-title-lines-3 ds-card-desc-lines-3  "><div class="img-wrapper"><picture class="ds-image
+       img
+      
+      
+    "><img loading="lazy" crossorigin="anonymous" sizes="(min-width: 1122px) 296px,(min-width: 866px) 218px,(max-width: 610px) 202px,202px" src="https://s3.us-east-1.amazonaws.com/pocket-curatedcorpusapi-prod-images/6fccacf2-0b19-48a4-8d29-2d9fd65e82e6.jpeg" srcSet="https://img-getpocket.cdn.mozilla.net/296x148/filters:format(jpeg):quality(60):no_upscale():strip_exif()/https%3A%2F%2Fs3.us-east-1.amazonaws.com%2Fpocket-curatedcorpusapi-prod-images%2F6fccacf2-0b19-48a4-8d29-2d9fd65e82e6.jpeg 296w,https://img-getpocket.cdn.mozilla.net/592x296/filters:format(jpeg):quality(60):no_upscale():strip_exif()/https%3A%2F%2Fs3.us-east-1.amazonaws.com%2Fpocket-curatedcorpusapi-prod-images%2F6fccacf2-0b19-48a4-8d29-2d9fd65e82e6.jpeg 592w,https://img-getpocket.cdn.mozilla.net/218x109/filters:format(jpeg):quality(60):no_upscale():strip_exif()/https%3A%2F%2Fs3.us-east-1.amazonaws.com%2Fpocket-curatedcorpusapi-prod-images%2F6fccacf2-0b19-48a4-8d29-2d9fd65e82e6.jpeg 218w,https://img-getpocket.cdn.mozilla.net/436x218/filters:format(jpeg):quality(60):no_upscale():strip_exif()/https%3A%2F%2Fs3.us-east-1.amazonaws.com%2Fpocket-curatedcorpusapi-prod-images%2F6fccacf2-0b19-48a4-8d29-2d9fd65e82e6.jpeg 436w,https://img-getpocket.cdn.mozilla.net/202x101/filters:format(jpeg):quality(60):no_upscale():strip_exif()/https%3A%2F%2Fs3.us-east-1.amazonaws.com%2Fpocket-curatedcorpusapi-prod-images%2F6fccacf2-0b19-48a4-8d29-2d9fd65e82e6.jpeg 202w,https://img-getpocket.cdn.mozilla.net/404x202/filters:format(jpeg):quality(60):no_upscale():strip_exif()/https%3A%2F%2Fs3.us-east-1.amazonaws.com%2Fpocket-curatedcorpusapi-prod-images%2F6fccacf2-0b19-48a4-8d29-2d9fd65e82e6.jpeg 404w"/></picture></div><a href="https://www.travelandleisureasia.com/my/destinations/india/best-flea-markets-in-india/?utm_source=pocket-newtab-en-intl" title="Souk Stories: Explore the Best Flea Markets in India for a Shopaholic’s Delight" class="ds-card-link"><div class="impression-observer"></div></a><div class="meta"><div class="info-wrap"><p class="source clamp">Travel &amp; Leisure Asia</p><header class="title clamp">Souk Stories: Explore the Best Flea Markets in India for a Shopaholic’s Delight</header><p class="excerpt clamp">Skip the souvenir shops on your travels and explore the exciting world of India&#x27;s best flea markets across Mumbai, Delhi, Goa and beyond.</p></div></div><div class="card-stp-button-hover-background"><div class="card-stp-button-position-wrapper"><button class="card-stp-button"><span class="story-badge-icon icon icon-pocket-save"></span><span data-l10n-id="newtab-pocket-save"></span></button><div class="context-menu-position-container"><button aria-haspopup="true" data-l10n-id="newtab-menu-content-tooltip" data-l10n-args="{&quot;title&quot;:&quot;Souk Stories: Explore the Best Flea Markets in India for a Shopaholic’s Delight&quot;}" class="context-menu-button icon"></button></div></div></div></article><article class="ds-card   ds-card-title-lines-3 ds-card-desc-lines-3  "><div class="img-wrapper"><picture class="ds-image
+       img
+      
+      
+    "><img loading="lazy" crossorigin="anonymous" sizes="(min-width: 1122px) 296px,(min-width: 866px) 218px,(max-width: 610px) 202px,202px" src="https://s3.us-east-1.amazonaws.com/pocket-curatedcorpusapi-prod-images/1f322253-7a2f-4509-b543-57979fd636a1.jpeg" srcSet="https://img-getpocket.cdn.mozilla.net/296x148/filters:format(jpeg):quality(60):no_upscale():strip_exif()/https%3A%2F%2Fs3.us-east-1.amazonaws.com%2Fpocket-curatedcorpusapi-prod-images%2F1f322253-7a2f-4509-b543-57979fd636a1.jpeg 296w,https://img-getpocket.cdn.mozilla.net/592x296/filters:format(jpeg):quality(60):no_upscale():strip_exif()/https%3A%2F%2Fs3.us-east-1.amazonaws.com%2Fpocket-curatedcorpusapi-prod-images%2F1f322253-7a2f-4509-b543-57979fd636a1.jpeg 592w,https://img-getpocket.cdn.mozilla.net/218x109/filters:format(jpeg):quality(60):no_upscale():strip_exif()/https%3A%2F%2Fs3.us-east-1.amazonaws.com%2Fpocket-curatedcorpusapi-prod-images%2F1f322253-7a2f-4509-b543-57979fd636a1.jpeg 218w,https://img-getpocket.cdn.mozilla.net/436x218/filters:format(jpeg):quality(60):no_upscale():strip_exif()/https%3A%2F%2Fs3.us-east-1.amazonaws.com%2Fpocket-curatedcorpusapi-prod-images%2F1f322253-7a2f-4509-b543-57979fd636a1.jpeg 436w,https://img-getpocket.cdn.mozilla.net/202x101/filters:format(jpeg):quality(60):no_upscale():strip_exif()/https%3A%2F%2Fs3.us-east-1.amazonaws.com%2Fpocket-curatedcorpusapi-prod-images%2F1f322253-7a2f-4509-b543-57979fd636a1.jpeg 202w,https://img-getpocket.cdn.mozilla.net/404x202/filters:format(jpeg):quality(60):no_upscale():strip_exif()/https%3A%2F%2Fs3.us-east-1.amazonaws.com%2Fpocket-curatedcorpusapi-prod-images%2F1f322253-7a2f-4509-b543-57979fd636a1.jpeg 404w"/></picture></div><a href="https://lifestyle.livemint.com//food/discover/celebrity-chefs-sellouts-david-chang-chili-crunch-111713583340002.html?utm_source=pocket-newtab-en-intl" title="Are celebrity chefs sellouts?" class="ds-card-link"><div class="impression-observer"></div></a><div class="meta"><div class="info-wrap"><p class="source clamp">Mint Lounge</p><header class="title clamp">Are celebrity chefs sellouts?</header><p class="excerpt clamp">David Chang’s public apology and the announcement that his company Momofuku would back off of an attempt to trademark the term “chili crunch” feel like standard damage control for a popular chef and the empire he’s built.</p></div></div><div class="card-stp-button-hover-background"><div class="card-stp-button-position-wrapper"><button class="card-stp-button"><span class="story-badge-icon icon icon-pocket-save"></span><span data-l10n-id="newtab-pocket-save"></span></button><div class="context-menu-position-container"><button aria-haspopup="true" data-l10n-id="newtab-menu-content-tooltip" data-l10n-args="{&quot;title&quot;:&quot;Are celebrity chefs sellouts?&quot;}" class="context-menu-button icon"></button></div></div></div></article></div></div></div><div><div class="ds-navigation ds-navigation-left-align "><span class="ds-navigation-header" data-l10n-id="newtab-pocket-read-more"></span><ul><li><a href="https://getpocket.com/explore/self-improvement?utm_source=pocket-newtab">Self improvement</a></li><li><a href="https://getpocket.com/explore/food?utm_source=pocket-newtab">Food</a></li><li><a href="https://getpocket.com/explore/entertainment?utm_source=pocket-newtab">Entertainment</a></li><li><a href="https://getpocket.com/explore/health?utm_source=pocket-newtab">Health &amp; fitness</a></li><li><a href="https://getpocket.com/explore/science?utm_source=pocket-newtab">Science</a></li><li><a href="https://getpocket.com/explore?utm_source=pocket-newtab">More recommendations ›</a></li></ul><a href="https://www.mozilla.org/privacy/firefox/#recommend-relevant-content" class="ds-navigation-privacy"><span data-l10n-id="newtab-section-menu-privacy-notice"></span></a></div></div></div></div><style data-styles="[[null,{&quot;.ds-navigation&quot;:&quot;margin-top: -10px;&quot;}]]"></style></div></div></section><div class="discovery-stream ds-layout"><div class="ds-column ds-column-12"><div class="ds-column-grid"><div></div></div></div><style data-styles="[[null]]"></style></div></div></main></div></div>
+    </div>
+    <div id="footer-asrouter-container" role="presentation"></div>
+    <script src="about:home?jscache"></script>
+    <script async type="module" src="chrome://global/content/elements/moz-toggle.mjs"></script>
+  </body>
+</html>
+window.__FROM_STARTUP_CACHE__ = true;
+window.__STARTUP_STATE__ = {
+	"TopSites": {
+		"initialized": true,
+		"rows": [
+			{
+				"isDefault": true,
+				"url": "https://s.click.aliexpress.com/e/byrlillA?af=amp1250&dp=1713763963400300002&mfadid=adm",
+				"hostname": "s.click.aliexpress",
+				"sendAttributionRequest": false,
+				"label": "AliExpress",
+				"show_sponsored_label": true,
+				"sponsored_position": 1,
+				"sponsored_click_url": "https://bridge.sfo1.ap01.net/ctp?version=16.0.0&ci=1713763963930.12791&key=1713763963400300002.1&ctag=1713763963400300002",
+				"sponsored_impression_url": "https://imp.mt48.net/static?id=7RHzfOIXjFEYsBdvIpkX4ZlZ4ZHZ1CHZ4pbWfZbWfpbY7ReNxR3UIG8zInwYIFIVs9eYiGINHrwkiFXwxYIZjF8XgClWfC2X7R4dHQ8zJnErj%3DcO7R4dHQfz4Z2Z4pfnHG3Z5FwqgCfX1p8d4Cxr1BINI9HuiF2z4Z2Z4pfnHmcux%3DcvImauiF2zfQl%2B4QqX7ncqIr7VjGbuiF2zfCDkfCHXfQDnj9wWIBdvIpkY7R4TJr2uJREuHnEYgClnHr7wHG3vjnDuiF2zfCbYfYIWJ%3DcQIFdwJR2uiF2zfCbW4Wyy",
+				"sponsored_tile_id": 74343,
+				"partner": "amp",
+				"favicon": "https://contile-images.services.mozilla.com/Lbtwp8lOwiYh9vxiwPInJ_U7mlWtWHU5_yHpcziM01U.10324.jpg",
+				"faviconSize": 200,
+				"typedBonus": true
+			},
+			{
+				"isDefault": true,
+				"url": "https://www.amazon.in/?k=%QUERY_KEYWORD%&tag=admpdesktopin-21&ref=pd_sl_b48c6ad2090470cbe0dce5c9e453709f13acf47dc3a3831f18787e49",
+				"hostname": "amazon",
+				"sendAttributionRequest": false,
+				"label": "Amazon",
+				"show_sponsored_label": true,
+				"sponsored_position": 2,
+				"sponsored_click_url": "https://bridge.sfo1.ap01.net/ctp?version=16.0.0&ci=1713763963930.12791&key=1713763963400300002.2&ctag=pd_sl_b48c6ad2090470cbe0dce5c9e453709f13acf47dc3a3831f18787e49",
+				"sponsored_impression_url": "https://imp.mt48.net/static?id=7RHzfOIXjFEYsBdvIpkX4ZlZ4ZHZ1CHZ4pbWfZbWfpbY7ReNxR3UIG8zInwYIFIVs9eYiGINHrwkiFXwxYIZjF8XgClWfC2X7R4dHQ8zJnErj%3DcO7R4dHQfz4Z2Z4CxnHG3Z5FwqgCfX1p8d4Cxr1BINI9HuiF2z4Z2Z4CxnHmcux%3DcvImauiF2zfQlXfplZ7ncqIr7VjGbuiF2zfCfdfC2X4QDnj9wWIBdvIpkY7R4TJr2uJREuHnEYgC8nHr7wHG3vjnDuiF2z4Z2Z7ReTHF4wJFEUjtdvIpkXfpbr",
+				"sponsored_tile_id": 74357,
+				"partner": "amp",
+				"favicon": "https://contile-images.services.mozilla.com/obgoOYObjIFea_bXuT6L4LbBJ8j425AD87S1HMD3BWg.9991.jpg",
+				"faviconSize": 200,
+				"typedBonus": true
+			},
+			{
+				"bookmarkGuid": "sbh66IGXtEZ0",
+				"frecency": 8497,
+				"guid": "eGawV9CK6yFQ",
+				"lastVisitDate": 1713600815711,
+				"title": "(131) YouTube",
+				"url": "https://www.youtube.com/",
+				"type": "history",
+				"favicon": "data:image/png;base64,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",
+				"faviconLength": 2783,
+				"faviconRef": "",
+				"faviconSize": 144,
+				"smallFavicon": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAtklEQVQ4T2NkoBAwUqifAW7AfwYGAaBhBlADHXAYfAAqfgGo8QOIDTYAqDkBSM0n0TWJQM0LGIGaQbaeJ1EzTLkhyIAAIG89mQYkggxoAGqux2rAgwdAzwF9dwDmdQxVjfgN+A80HgQ2bmRgKChgYAAZiAqINODgQYhLSDYApAFk84YNuIII7ALcgSgATBofwNGNC4ADkbJoBBlNUUKCuQ0tKYNcBUra6AAWn6hJGZ8nCclRnBsBzJ03KZWC+NsAAAAASUVORK5CYII=",
+				"smallFaviconLength": 239,
+				"smallFaviconRef": "",
+				"smallFaviconSize": 16,
+				"hostname": "youtube",
+				"typedBonus": true
+			},
+			{
+				"bookmarkGuid": null,
+				"frecency": 6300,
+				"guid": "axHN0x6fRFGZ",
+				"lastVisitDate": 1713763131637,
+				"title": "Microsoft Teams classic",
+				"url": "https://teams.microsoft.com/_#/FileBrowserTabApp/General?threadId=19:414a394aac4d4371af824f64def45c60@thread.skype&ctx=channel",
+				"type": "history",
+				"favicon": "data:image/png;base64,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",
+				"faviconLength": 2722,
+				"faviconRef": "",
+				"faviconSize": 96,
+				"smallFavicon": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAABuklEQVQ4T2NkwAI6Ot7Jffnzfy7j/38W/xmZTvCwMCZXVAg9wqaWEZtgTcvb3f///3OByTEyMu1pqRF2JdqA2ubXn/8xMPDANDAxMHxprhXlDYo62crwnyGPgZFh0rpl5tUgeawuCAqbdfbL17dGPDxiDJo6fgwwFwRFngQbDDJw3XJzXrABvsF7HgEFZdGdx8T459ev7xf+mVqmHoGFAVYXeAfv+Y/NbyCxrWtduIHUN1zyYBeADIgKU2SIClOCq1u26h7DslX3GX5/P8UAdAFY/OfPP3/v3H3EDFfExHBtw1JzbbABMMEta5wZfEL2wtUgGwASvHrtHopjNiw3ZxxkBoDCAuR3GMDvBaafG5abcuCMxn9/vzP8/XUZHogYYcDIuHPDMjMPlITkHTT5w9tXt/gZgMmNiYmFgV9QjsHIJBbsoP8MjM+uXb9/jek/g+k/xv8nWFn4k1cvUn+KYkB67sG1v3//DoJ5gYWFnUFUXAPMZWRkmN1SI5qGniZQDGht/S/+49/bc/8Y/kshKwQm5cccDP8ta2pEnuI1ACTZ0vJG+gcDQyfj///uQO6//0C/8rAw1eDKzgAZg9ERdodCKQAAAABJRU5ErkJggg==",
+				"smallFaviconLength": 499,
+				"smallFaviconRef": "",
+				"smallFaviconSize": 16,
+				"hostname": "teams.microsoft",
+				"typedBonus": true
+			},
+			{
+				"bookmarkGuid": null,
+				"frecency": 3998,
+				"guid": "ZdV--blkl-Dw",
+				"lastVisitDate": 1713758885736,
+				"title": "localhost",
+				"url": "https://locallhost.com/#google_vignette",
+				"type": "history",
+				"screenshot": "moz-page-thumb://thumbnails/?url=https%3A%2F%2Flocallhost.com%2F%23google_vignette&revision=2625",
+				"hostname": "locallhost",
+				"typedBonus": true
+			},
+			{
+				"bookmarkGuid": null,
+				"frecency": 3900,
+				"guid": "tBBIVaCVD6Cg",
+				"lastVisitDate": 1713609756337,
+				"title": "Welcome to nginx!",
+				"url": "http://www.aaksh.net.com/",
+				"type": "history",
+				"screenshot": "moz-page-thumb://thumbnails/?url=http%3A%2F%2Fwww.aaksh.net.com%2F&revision=1274",
+				"hostname": "aaksh.net",
+				"typedBonus": true
+			},
+			{
+				"bookmarkGuid": null,
+				"frecency": 2048,
+				"guid": "wnZG2WTRL50z",
+				"lastVisitDate": 1713596413000,
+				"title": "Getting Started | NGINX",
+				"url": "https://www.nginx.com/resources/wiki/start/",
+				"type": "history",
+				"favicon": "data:image/png;base64,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",
+				"faviconLength": 1699,
+				"faviconRef": "",
+				"faviconSize": 48,
+				"smallFavicon": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAABsElEQVQ4T2NkwAG4p7m7MDEx9TEw/P/HzMhc+CF9635sShnRBcVmBih///+jl/E/gz+y3P//DOuYeFhLPsZtvo8sDjdAfaMf77OnP6sZGJkKGBn+s2Oz7T8jww+G/4x9n4V52hnCVn8BqQEbIDjDI+bvP8ZuBsb/Eri8hOqa/88YWZlLPqVuW87IsCqUje/dZ6DJEMO0hRQYvBUtGRZc28Hw6vt7uL4kLS+GEy+uMVx79wAqxvjvk/AjTkaG+QkcfD9efIep7LPNYUjW9ma49OYug8eGEoavf34wsDKxMLxJ28ww4/ImhvKj0+GGfuKQwDSgH2hAEtCAX39/M+x6dJohZlcLAysjC8PrtE0MM4EGlBFrQPb+foapjoUMfedXMrSfXkq6AfwzPBmaLVIYcg2CGfIOTGCY7FBAmgtABjAxMjEs96hjcJI1ZmADhgNRXgAFYpK2F4PADC9wYPGwcjLsCuhj0BZWYJh+eSNDxdEZaIGIFo26wkoMxmJqDAuu74ArlOASYojT9GDYdO8ow433D9GiEZaQ/gMTEgM5CQlqHkVJGTmZkp2Z0PMAsdkZAKjH5fEaygyhAAAAAElFTkSuQmCC",
+				"smallFaviconLength": 489,
+				"smallFaviconRef": "",
+				"smallFaviconSize": 16,
+				"screenshot": "moz-page-thumb://thumbnails/?url=https%3A%2F%2Fwww.nginx.com%2Fresources%2Fwiki%2Fstart%2F&revision=688",
+				"hostname": "nginx",
+				"typedBonus": true
+			},
+			{
+				"bookmarkGuid": null,
+				"frecency": 1997,
+				"guid": "cZ1iElzNVMn6",
+				"lastVisitDate": 1713442964429,
+				"title": "Login | Microsoft 365",
+				"url": "https://www.office.com/",
+				"type": "history",
+				"favicon": "data:image/png;base64,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",
+				"faviconLength": 3544,
+				"faviconRef": "",
+				"faviconSize": 48,
+				"smallFavicon": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAC7klEQVQ4T3XTT0hUQRwH8O/Me/vvqZuZ5ZabEtS22aHoECV06BDUBip0MIysQxhEUUQHc0mwsKKkMiGwblFiBKFC5iHoUBBCFAgqi5ZZQf7B1p7vz74/u6/f20XYIgeGGebNfH6/mTfDsEKJnXkTskpL6nkwAJ+4qnfgQtns/6ayfwcHzzm+qcLx8y8WpuMIbQgKxQHwgCg7AU97ZF24syvGjPw1fwG9bd9qBQcdwz8nNr83VfjDFRBKCsAkESzgVs8kk3Bp8HCofxnJAjeap1eXeJweH2MHAzTy9vsoPqUt+DdWQigloMgDLnkIEMD8IuDjQxB5w8t9xckscOvKVLcPaPIzhgAYhrOAiYALlBWBF3vBCr2EuIsJ8XBwkT8c2FN0Ogu0tX4d9TpOlZ/6EiEfv49hxLZmpPLwM29lMdgaqZ4FPSG42/BxMNEFxLH+nf7tWeBy65cE7T1CWUCiDOYW5/pGfi2cePU0Jrvfa97NFzlT848RKa+DRNkIDIzzRH/UG80CZ+OfEyJDxEN9dxsFEOPN1yqu559244GOFi3obbfq9wO7t4GURH8lywEnCeDMiQjUp13Cy4W7nVc3XcwHztV03zUs+4JuatC2rUf6bF2iL1qYA460TCYYy0Tcfpqq7mTmk7axa/jWjh/u2P1Tg+E5TflkmGapaVswLB1K1YbEk9t1OeBQy8SojUwVLYRsm1iiKGpqccaWZ1sebKlGcnHhuqz+DumGBoOAdNoGzR+78/x47hCr4+PdS5bdpJCs6zJMLYmoKOJEeCvWMhG/VRmKpkAzUhTdgEVIJmM/bO89mvuNFc0jqwVN7tHVXwfLMjYaK6LYuyYMVVeh6Eq2VVMa9CxgwkqbQ4q51HCz51juIi2XkUd2LWe8I2Uam1NmClpKp6h0aNTqhg4am6QMLl3sPvD3Vc5HnEHH92FKPU9InFIOpiiqbpmyaWntpdpsZ6wrtvJjyode31PKMmbyqGHQcXGptzb+/+f8B1LGUSDlLBZvAAAAAElFTkSuQmCC",
+				"smallFaviconLength": 807,
+				"smallFaviconRef": "",
+				"smallFaviconSize": 16,
+				"screenshot": "moz-page-thumb://thumbnails/?url=https%3A%2F%2Fwww.office.com%2F&revision=5147",
+				"hostname": "office",
+				"typedBonus": true
+			}
+		],
+		"editForm": null,
+		"showSearchShortcutsForm": false,
+		"searchShortcuts": [
+			{
+				"keyword": "@google",
+				"shortURL": "google",
+				"url": "https://google.com",
+				"tippyTopIcon": "chrome://activity-stream/content/data/content/tippytop/images/google-com@2x.png",
+				"smallFavicon": "chrome://activity-stream/content/data/content/tippytop/favicons/google-com.ico"
+			},
+			{
+				"keyword": "@bing",
+				"shortURL": "bing",
+				"url": "https://bing.com",
+				"tippyTopIcon": "chrome://activity-stream/content/data/content/tippytop/images/bing-com@2x.svg",
+				"smallFavicon": "chrome://activity-stream/content/data/content/tippytop/favicons/bing-com.ico"
+			},
+			{
+				"keyword": "@duckduckgo",
+				"shortURL": "duckduckgo",
+				"url": "https://duckduckgo.com",
+				"tippyTopIcon": "chrome://activity-stream/content/data/content/tippytop/images/duckduckgo-com@2x.svg",
+				"smallFavicon": "chrome://activity-stream/content/data/content/tippytop/favicons/duckduckgo-com.ico"
+			},
+			{
+				"keyword": "@wikipedia",
+				"shortURL": "wikipedia",
+				"url": "https://wikipedia.org",
+				"tippyTopIcon": "chrome://activity-stream/content/data/content/tippytop/images/wikipedia-org@2x.png",
+				"smallFavicon": "chrome://activity-stream/content/data/content/tippytop/favicons/wikipedia-org.ico"
+			}
+		],
+		"sov": {
+			"ready": true,
+			"positions": [
+				{
+					"position": 1,
+					"assignedPartner": "amp"
+				},
+				{
+					"position": 2,
+					"assignedPartner": "amp"
+				},
+				{
+					"position": 3,
+					"assignedPartner": "amp"
+				}
+			]
+		},
+		"pref": {
+			"collapsed": false
+		}
+	},
+	"App": {
+		"initialized": true,
+		"locale": "en-US",
+		"isForStartupCache": true,
+		"customizeMenuVisible": false,
+		"links": [
+			{
+				"isDefault": true,
+				"url": "https://s.click.aliexpress.com/e/byrlillA?af=amp1250&dp=1713763963400300002&mfadid=adm",
+				"hostname": "s.click.aliexpress",
+				"sendAttributionRequest": false,
+				"label": "AliExpress",
+				"show_sponsored_label": true,
+				"sponsored_position": 1,
+				"sponsored_click_url": "https://bridge.sfo1.ap01.net/ctp?version=16.0.0&ci=1713763963930.12791&key=1713763963400300002.1&ctag=1713763963400300002",
+				"sponsored_impression_url": "https://imp.mt48.net/static?id=7RHzfOIXjFEYsBdvIpkX4ZlZ4ZHZ1CHZ4pbWfZbWfpbY7ReNxR3UIG8zInwYIFIVs9eYiGINHrwkiFXwxYIZjF8XgClWfC2X7R4dHQ8zJnErj%3DcO7R4dHQfz4Z2Z4pfnHG3Z5FwqgCfX1p8d4Cxr1BINI9HuiF2z4Z2Z4pfnHmcux%3DcvImauiF2zfQl%2B4QqX7ncqIr7VjGbuiF2zfCDkfCHXfQDnj9wWIBdvIpkY7R4TJr2uJREuHnEYgClnHr7wHG3vjnDuiF2zfCbYfYIWJ%3DcQIFdwJR2uiF2zfCbW4Wyy",
+				"sponsored_tile_id": 74343,
+				"partner": "amp",
+				"favicon": "https://contile-images.services.mozilla.com/Lbtwp8lOwiYh9vxiwPInJ_U7mlWtWHU5_yHpcziM01U.10324.jpg",
+				"faviconSize": 200,
+				"typedBonus": true
+			},
+			{
+				"isDefault": true,
+				"url": "https://www.amazon.in/?k=%QUERY_KEYWORD%&tag=admpdesktopin-21&ref=pd_sl_b48c6ad2090470cbe0dce5c9e453709f13acf47dc3a3831f18787e49",
+				"hostname": "amazon",
+				"sendAttributionRequest": false,
+				"label": "Amazon",
+				"show_sponsored_label": true,
+				"sponsored_position": 2,
+				"sponsored_click_url": "https://bridge.sfo1.ap01.net/ctp?version=16.0.0&ci=1713763963930.12791&key=1713763963400300002.2&ctag=pd_sl_b48c6ad2090470cbe0dce5c9e453709f13acf47dc3a3831f18787e49",
+				"sponsored_impression_url": "https://imp.mt48.net/static?id=7RHzfOIXjFEYsBdvIpkX4ZlZ4ZHZ1CHZ4pbWfZbWfpbY7ReNxR3UIG8zInwYIFIVs9eYiGINHrwkiFXwxYIZjF8XgClWfC2X7R4dHQ8zJnErj%3DcO7R4dHQfz4Z2Z4CxnHG3Z5FwqgCfX1p8d4Cxr1BINI9HuiF2z4Z2Z4CxnHmcux%3DcvImauiF2zfQlXfplZ7ncqIr7VjGbuiF2zfCfdfC2X4QDnj9wWIBdvIpkY7R4TJr2uJREuHnEYgC8nHr7wHG3vjnDuiF2z4Z2Z7ReTHF4wJFEUjtdvIpkXfpbr",
+				"sponsored_tile_id": 74357,
+				"partner": "amp",
+				"favicon": "https://contile-images.services.mozilla.com/obgoOYObjIFea_bXuT6L4LbBJ8j425AD87S1HMD3BWg.9991.jpg",
+				"faviconSize": 200,
+				"typedBonus": true
+			},
+			{
+				"bookmarkGuid": "sbh66IGXtEZ0",
+				"frecency": 8497,
+				"guid": "eGawV9CK6yFQ",
+				"lastVisitDate": 1713600815711,
+				"title": "(131) YouTube",
+				"url": "https://www.youtube.com/",
+				"type": "history",
+				"favicon": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAJAAAACQCAYAAADnRuK4AAAABGdBTUEAALGPC/xhBQAAACBjSFJNAAB6JgAAgIQAAPoAAACA6AAAdTAAAOpgAAA6mAAAF3CculE8AAAAhGVYSWZNTQAqAAAACAAFARIAAwAAAAEAAQAAARoABQAAAAEAAABKARsABQAAAAEAAABSASgAAwAAAAEAAgAAh2kABAAAAAEAAABaAAAAAAAAAEgAAAABAAAASAAAAAEAA6ABAAMAAAABAAEAAKACAAQAAAABAAAAkKADAAQAAAABAAAAkAAAAADMBWeLAAAACXBIWXMAAAsTAAALEwEAmpwYAAABWWlUWHRYTUw6Y29tLmFkb2JlLnhtcAAAAAAAPHg6eG1wbWV0YSB4bWxuczp4PSJhZG9iZTpuczptZXRhLyIgeDp4bXB0az0iWE1QIENvcmUgNi4wLjAiPgogICA8cmRmOlJERiB4bWxuczpyZGY9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkvMDIvMjItcmRmLXN5bnRheC1ucyMiPgogICAgICA8cmRmOkRlc2NyaXB0aW9uIHJkZjphYm91dD0iIgogICAgICAgICAgICB4bWxuczp0aWZmPSJodHRwOi8vbnMuYWRvYmUuY29tL3RpZmYvMS4wLyI+CiAgICAgICAgIDx0aWZmOk9yaWVudGF0aW9uPjE8L3RpZmY6T3JpZW50YXRpb24+CiAgICAgIDwvcmRmOkRlc2NyaXB0aW9uPgogICA8L3JkZjpSREY+CjwveDp4bXBtZXRhPgoZXuEHAAAIYElEQVR4Ae2d+3XbNhjF6Z7+H6UD1LA7QHzSAaKkA+QxQPNYoEkGqGUP0KQTJFmgdRaIlQUSZ4GIXiBWFqh7L8VPAWm+JFOKBVycAwEEPoLED/d8AKFXkiiIgAiIgAiIgAiIgAiIgAiIgAiIgAiIgAiIgAiIgAiIgAiIgAiIgAiIgAiIgAiIgAiIgAiIgAiIgAiIgAiIgAiIgAiIgAiIgAiIgAismcDWmq+3ksudJ8kADTNWhaa6KvvLlqU1DUwBe1pTt7HFaxcQBtvltJja4F5D/npevp2nVsdDP191nJ+ycQkFxWghtUye2vFXHJudlVmatYGBtGOYri/0KqDcEzjc/h4iU4phgMhjBpe96mWVBFI0nokKKfOniGeInxDpBU+Q9hbQ3vIhFwzFcQ/xLqJDVLj6BCiiFPEI8T1EwPxSYSkB5cL5A1d8ijhY6so66SoRGONmXkMMbxa9qYUEJOEsinfj7Ce442cQxduud95ZQBDPHhr9F9F1bVx2G0vgBYTxvMvd/9DFCOLhdHWM6LrYy2bjCTzDmH9AbB1vCK05oJF9WIyarVQbKIEJ+nUTIpnW9a/RA0k8ddiiKd9BT/9p6m2tgCCeezhx1HSy6qIgcBta+Kuup5VTGE5wOOEYkamCCEASyR2IZVxGUeeBRjB0ZWMdR0sA2kn+rOo9Kwoh9z6TQqEORCBJKr1QlQcaiZYIVBCgs/m9XF7lgeh9XNlQxyIAAmeIuxDN/LG+4IHgo4YwcIgKIlBFYIDCPb+iIKBypW+ovAiAAGesoU+iLKBbfqXyIlBB4IZfVhaQ8yuVF4EKAgUnQ5eUBax/OL9xkaQgAk0EIJVsIZ3SyPdAhcURKxVEoIbAfBrzBUQPpCACXQjsmJEvIHkgo6K0iQCXPdtm4AvIWaFSEWgh4KzeF9BcVVapVARqCGgNVANGxd0IzNfLvgdy3c6VlQgkg3zbp/AYP1dVkIAePsS32J4G2bXv1KlML5kHgprcd7qJ9V12B0+eL14kyWSC3obf3TWAzSDaFBYPUYqHIqKYJKTL6KwgoMs0tJnncjo7Pk4STm0KSxMwDxT2+qcODz3Q69dJ8uqVvFEdo+ryLRQ7VsUtIBJgePRoNq3t72eHeulE4BqtTECu0ymhG41GMyHdvRt6T/voX0FAfTQYRhuc1o6ONK21j2b2i3LmgdrNY7PgtKZFdtOoFzyQa7KMts4W2do7qpLAt43EqlqVeQQoJNs7GsT5wOrRsKwEZCQ6p9w7+vhRe0ceMFsDbXtlyjYRsGlNe0eOmExATchUV0WAi+zPn/HzW3HvHUlAVeLoWra1hV9QGs2ENBx2PSsoOwmoj+Hc2Zk98kc2rZ3j7QwJqA8BWRuc1t69i2qRLQHZ4PeV0hvxDVquj7jgDjxIQKsaYArJFtkB7x1JQKsSENu1RfaHD8FOaxLQKgVkbdu0FuAiWwKyQV5HantH4Xy4X09h69BN4Rrj8ezjIoXCzT34cXNvfcPunG/GPnmCX1oeb9iNN97uVFNYI5+eKl++xD9O3AxNPIQzlQfqSSOVzfADac/xr0knJ5XVIRTKA61iFM/O8Ldtz/DnAHeCFg/RyQP1LSBOVwcHcO7Tvlu+ku1JQH0NS5iL5FY6msJaEbUY0NPQ4+zuhrhIbuz8Fv7tWR6oEVFLJRfJfDRP0xbDcKvNA52G28UV9IzT1f37s0VyxOIhWRPQCigH2qTt6fDLh3GH7ClBU1hXEUSwp9MVRW6XCUgeqI0aF8mR7Om0oSjVFzxQWqrUIQnwk4UUTyR7OgsOekFAC54buDkXxo8fR/dYvsyo2hQGYgoJ34Lgng4/ABbWu+arGNyUjWoRTQrn5zPBRL6nQxSLBvNA2Xy26MlB2HNP58ED7eksPpjZ3mG8AqLX0Z7O4rKZnQF4yVdmbQpLeRBFsOnq8FDrnMsNeIRPYVwkUzj0PAqXJZCygS1rBT6JbincMBzOPtylPZ0+xphauQnxnPgCmqDQ9dG62gieAAX0E8RT+FB9vE9iwY93/x2keNiqPYUxn/JFQQQ6EDgxG19Ap1aoVARaCMxnK19AactJqhYBI/DJMhKQkVDalQAX0KkZ+wKaz2tWqVQEagjMPRAW098CpIWdtmTwrUQ5EbhAYP4IzxrfA/E45YuCCDQQmNojPG3KApq7poYGVBU3gcJSpyygcdxs1PsOBN77NhKQT0P5NgJc/9QLCHNbCoMxooIIVBFIoZGxX1H2QKx76xsoLwIegbGXz7IQVDHAR/ExHr+SnVwv1ugocgKcvnbzWWqO4oIHgsEUtYdzC2VEYPZZsYOyeAjmggcyWpAb/vQhuW3HSqMm8BlC+aWKwAUP5BnhqwrJxDtWNk4CX9Dt3+q6XisgKI5T2R1EiaiOXvjlmXighbSuq6hrDpjKHCw4ne00W6o2MAImnsLOc7mPtR7IDHP10RMdW5nSoAnAZ2RP4b9i7BvFQwqtAqIRRYRIER0g8gIKYRLg2P6NSPGkK+kiruAQXyH+h8iv6SmGweAYYzlcVDQQ2nIBF3M4cx/xFiLzDEu3Nztdr2smwAelI8Q3GLjxMtfuZcBz5d7ADZiY9ko308t1Sm3qcHECKU7humaMyI/u8IuBFNHSYWUDC1E53BXjAJGCupZHh5RlfsRhY1jZfTZedTMq0/w2mU7zeIqUny79injCMgBMkfYersTAQGy+mJhnsDLmHV+88LOXZ9aVjv3Dct26+pz6N+Hlp8gz+oED7ZfZ4JtNmmcsTdCJeT6vUyICIiACIiACIiACIiACIiACIiACIiACIiACIiACIiACIiACIiACIiACIiACIiACIiACIiACIiACIiACIiACIiACIiACIiACIrAxBP4HtLBfcwuxz0sAAAAASUVORK5CYII=",
+				"faviconLength": 2783,
+				"faviconRef": "",
+				"faviconSize": 144,
+				"smallFavicon": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAtklEQVQ4T2NkoBAwUqifAW7AfwYGAaBhBlADHXAYfAAqfgGo8QOIDTYAqDkBSM0n0TWJQM0LGIGaQbaeJ1EzTLkhyIAAIG89mQYkggxoAGqux2rAgwdAzwF9dwDmdQxVjfgN+A80HgQ2bmRgKChgYAAZiAqINODgQYhLSDYApAFk84YNuIII7ALcgSgATBofwNGNC4ADkbJoBBlNUUKCuQ0tKYNcBUra6AAWn6hJGZ8nCclRnBsBzJ03KZWC+NsAAAAASUVORK5CYII=",
+				"smallFaviconLength": 239,
+				"smallFaviconRef": "",
+				"smallFaviconSize": 16,
+				"hostname": "youtube",
+				"typedBonus": true
+			},
+			{
+				"bookmarkGuid": null,
+				"frecency": 6300,
+				"guid": "axHN0x6fRFGZ",
+				"lastVisitDate": 1713763131637,
+				"title": "Microsoft Teams classic",
+				"url": "https://teams.microsoft.com/_#/FileBrowserTabApp/General?threadId=19:414a394aac4d4371af824f64def45c60@thread.skype&ctx=channel",
+				"type": "history",
+				"favicon": "data:image/png;base64,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",
+				"faviconLength": 2722,
+				"faviconRef": "",
+				"faviconSize": 96,
+				"smallFavicon": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAABuklEQVQ4T2NkwAI6Ot7Jffnzfy7j/38W/xmZTvCwMCZXVAg9wqaWEZtgTcvb3f///3OByTEyMu1pqRF2JdqA2ubXn/8xMPDANDAxMHxprhXlDYo62crwnyGPgZFh0rpl5tUgeawuCAqbdfbL17dGPDxiDJo6fgwwFwRFngQbDDJw3XJzXrABvsF7HgEFZdGdx8T459ev7xf+mVqmHoGFAVYXeAfv+Y/NbyCxrWtduIHUN1zyYBeADIgKU2SIClOCq1u26h7DslX3GX5/P8UAdAFY/OfPP3/v3H3EDFfExHBtw1JzbbABMMEta5wZfEL2wtUgGwASvHrtHopjNiw3ZxxkBoDCAuR3GMDvBaafG5abcuCMxn9/vzP8/XUZHogYYcDIuHPDMjMPlITkHTT5w9tXt/gZgMmNiYmFgV9QjsHIJBbsoP8MjM+uXb9/jek/g+k/xv8nWFn4k1cvUn+KYkB67sG1v3//DoJ5gYWFnUFUXAPMZWRkmN1SI5qGniZQDGht/S/+49/bc/8Y/kshKwQm5cccDP8ta2pEnuI1ACTZ0vJG+gcDQyfj///uQO6//0C/8rAw1eDKzgAZg9ERdodCKQAAAABJRU5ErkJggg==",
+				"smallFaviconLength": 499,
+				"smallFaviconRef": "",
+				"smallFaviconSize": 16,
+				"hostname": "teams.microsoft",
+				"typedBonus": true
+			},
+			{
+				"bookmarkGuid": null,
+				"frecency": 3998,
+				"guid": "ZdV--blkl-Dw",
+				"lastVisitDate": 1713758885736,
+				"title": "localhost",
+				"url": "https://locallhost.com/#google_vignette",
+				"type": "history",
+				"screenshot": "moz-page-thumb://thumbnails/?url=https%3A%2F%2Flocallhost.com%2F%23google_vignette&revision=2625",
+				"hostname": "locallhost",
+				"typedBonus": true
+			},
+			{
+				"bookmarkGuid": null,
+				"frecency": 3900,
+				"guid": "tBBIVaCVD6Cg",
+				"lastVisitDate": 1713609756337,
+				"title": "Welcome to nginx!",
+				"url": "http://www.aaksh.net.com/",
+				"type": "history",
+				"screenshot": "moz-page-thumb://thumbnails/?url=http%3A%2F%2Fwww.aaksh.net.com%2F&revision=1274",
+				"hostname": "aaksh.net",
+				"typedBonus": true
+			},
+			{
+				"bookmarkGuid": null,
+				"frecency": 2048,
+				"guid": "wnZG2WTRL50z",
+				"lastVisitDate": 1713596413000,
+				"title": "Getting Started | NGINX",
+				"url": "https://www.nginx.com/resources/wiki/start/",
+				"type": "history",
+				"favicon": "data:image/png;base64,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",
+				"faviconLength": 1699,
+				"faviconRef": "",
+				"faviconSize": 48,
+				"smallFavicon": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAABsElEQVQ4T2NkwAG4p7m7MDEx9TEw/P/HzMhc+CF9635sShnRBcVmBih///+jl/E/gz+y3P//DOuYeFhLPsZtvo8sDjdAfaMf77OnP6sZGJkKGBn+s2Oz7T8jww+G/4x9n4V52hnCVn8BqQEbIDjDI+bvP8ZuBsb/Eri8hOqa/88YWZlLPqVuW87IsCqUje/dZ6DJEMO0hRQYvBUtGRZc28Hw6vt7uL4kLS+GEy+uMVx79wAqxvjvk/AjTkaG+QkcfD9efIep7LPNYUjW9ma49OYug8eGEoavf34wsDKxMLxJ28ww4/ImhvKj0+GGfuKQwDSgH2hAEtCAX39/M+x6dJohZlcLAysjC8PrtE0MM4EGlBFrQPb+foapjoUMfedXMrSfXkq6AfwzPBmaLVIYcg2CGfIOTGCY7FBAmgtABjAxMjEs96hjcJI1ZmADhgNRXgAFYpK2F4PADC9wYPGwcjLsCuhj0BZWYJh+eSNDxdEZaIGIFo26wkoMxmJqDAuu74ArlOASYojT9GDYdO8ow433D9GiEZaQ/gMTEgM5CQlqHkVJGTmZkp2Z0PMAsdkZAKjH5fEaygyhAAAAAElFTkSuQmCC",
+				"smallFaviconLength": 489,
+				"smallFaviconRef": "",
+				"smallFaviconSize": 16,
+				"screenshot": "moz-page-thumb://thumbnails/?url=https%3A%2F%2Fwww.nginx.com%2Fresources%2Fwiki%2Fstart%2F&revision=688",
+				"hostname": "nginx",
+				"typedBonus": true
+			},
+			{
+				"bookmarkGuid": null,
+				"frecency": 1997,
+				"guid": "cZ1iElzNVMn6",
+				"lastVisitDate": 1713442964429,
+				"title": "Login | Microsoft 365",
+				"url": "https://www.office.com/",
+				"type": "history",
+				"favicon": "data:image/png;base64,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",
+				"faviconLength": 3544,
+				"faviconRef": "",
+				"faviconSize": 48,
+				"smallFavicon": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAC7klEQVQ4T3XTT0hUQRwH8O/Me/vvqZuZ5ZabEtS22aHoECV06BDUBip0MIysQxhEUUQHc0mwsKKkMiGwblFiBKFC5iHoUBBCFAgqi5ZZQf7B1p7vz74/u6/f20XYIgeGGebNfH6/mTfDsEKJnXkTskpL6nkwAJ+4qnfgQtns/6ayfwcHzzm+qcLx8y8WpuMIbQgKxQHwgCg7AU97ZF24syvGjPw1fwG9bd9qBQcdwz8nNr83VfjDFRBKCsAkESzgVs8kk3Bp8HCofxnJAjeap1eXeJweH2MHAzTy9vsoPqUt+DdWQigloMgDLnkIEMD8IuDjQxB5w8t9xckscOvKVLcPaPIzhgAYhrOAiYALlBWBF3vBCr2EuIsJ8XBwkT8c2FN0Ogu0tX4d9TpOlZ/6EiEfv49hxLZmpPLwM29lMdgaqZ4FPSG42/BxMNEFxLH+nf7tWeBy65cE7T1CWUCiDOYW5/pGfi2cePU0Jrvfa97NFzlT848RKa+DRNkIDIzzRH/UG80CZ+OfEyJDxEN9dxsFEOPN1yqu559244GOFi3obbfq9wO7t4GURH8lywEnCeDMiQjUp13Cy4W7nVc3XcwHztV03zUs+4JuatC2rUf6bF2iL1qYA460TCYYy0Tcfpqq7mTmk7axa/jWjh/u2P1Tg+E5TflkmGapaVswLB1K1YbEk9t1OeBQy8SojUwVLYRsm1iiKGpqccaWZ1sebKlGcnHhuqz+DumGBoOAdNoGzR+78/x47hCr4+PdS5bdpJCs6zJMLYmoKOJEeCvWMhG/VRmKpkAzUhTdgEVIJmM/bO89mvuNFc0jqwVN7tHVXwfLMjYaK6LYuyYMVVeh6Eq2VVMa9CxgwkqbQ4q51HCz51juIi2XkUd2LWe8I2Uam1NmClpKp6h0aNTqhg4am6QMLl3sPvD3Vc5HnEHH92FKPU9InFIOpiiqbpmyaWntpdpsZ6wrtvJjyode31PKMmbyqGHQcXGptzb+/+f8B1LGUSDlLBZvAAAAAElFTkSuQmCC",
+				"smallFaviconLength": 807,
+				"smallFaviconRef": "",
+				"smallFaviconSize": 16,
+				"screenshot": "moz-page-thumb://thumbnails/?url=https%3A%2F%2Fwww.office.com%2F&revision=5147",
+				"hostname": "office",
+				"typedBonus": true
+			}
+		],
+		"pref": {
+			"collapsed": false
+		}
+	},
+	"ASRouter": {
+		"initialized": false
+	},
+	"Prefs": {
+		"initialized": true,
+		"values": {
+			"default.sites": "https://www.youtube.com/,https://www.facebook.com/,https://www.wikipedia.org/,https://www.reddit.com/,https://www.amazon.com/,https://twitter.com/",
+			"feeds.section.topstories.options": "{\"api_key_pref\":\"extensions.pocket.oAuthConsumerKey\",\"hidden\":false,\"provider_icon\":\"chrome://global/skin/icons/pocket.svg\",\"provider_name\":\"Pocket\",\"read_more_endpoint\":\"https://getpocket.com/explore/trending?src=fx_new_tab\",\"stories_endpoint\":\"https://getpocket.cdn.mozilla.net/v3/firefox/global-recs?version=3&consumer_key=$apiKey&locale_lang=en-US&feed_variant=default_spocs_off\",\"stories_referrer\":\"https://getpocket.com/recommendations\",\"topics_endpoint\":\"https://getpocket.cdn.mozilla.net/v3/firefox/trending-topics?version=2&consumer_key=$apiKey&locale_lang=en-US\",\"show_spocs\":false}",
+			"feeds.topsites": true,
+			"hideTopSitesTitle": false,
+			"showSponsored": true,
+			"system.showSponsored": false,
+			"showSponsoredTopSites": true,
+			"pocketCta": "{\"cta_button\":\"\",\"cta_text\":\"\",\"cta_url\":\"\",\"use_cta\":false}",
+			"showSearch": true,
+			"topSitesRows": 1,
+			"telemetry": true,
+			"telemetry.ut.events": false,
+			"telemetry.structuredIngestion.endpoint": "https://incoming.telemetry.mozilla.org/submit",
+			"section.highlights.includeVisited": true,
+			"section.highlights.includeBookmarks": true,
+			"section.highlights.includePocket": true,
+			"section.highlights.includeDownloads": true,
+			"section.highlights.rows": 1,
+			"section.topstories.rows": 1,
+			"sectionOrder": "topsites,topstories,highlights",
+			"improvesearch.noDefaultSearchTile": true,
+			"improvesearch.topSiteSearchShortcuts.searchEngines": "google",
+			"improvesearch.topSiteSearchShortcuts.havePinned": "",
+			"asrouter.devtoolsEnabled": false,
+			"asrouter.providers.onboarding": "{\"id\":\"onboarding\",\"type\":\"local\",\"localProvider\":\"OnboardingMessageProvider\",\"enabled\":true,\"exclude\":[]}",
+			"discoverystream.flight.blocks": "{}",
+			"discoverystream.config": "{\"api_key_pref\":\"extensions.pocket.oAuthConsumerKey\",\"collapsible\":true,\"enabled\":true}",
+			"discoverystream.endpoints": "https://getpocket.cdn.mozilla.net/,https://firefox-api-proxy.cdn.mozilla.net/,https://spocs.getpocket.com/",
+			"discoverystream.isCollectionDismissible": true,
+			"discoverystream.onboardingExperience.dismissed": false,
+			"discoverystream.region-basic-layout": false,
+			"discoverystream.spoc.impressions": "{}",
+			"discoverystream.endpointSpocsClear": "https://spocs.getpocket.com/user",
+			"discoverystream.rec.impressions": "{\"541988717377334\":1713758898248,\"2874067393483325\":1713758898249,\"3935761713311708\":1713758898249,\"4280406424615767\":1713764943884,\"3380048088614898\":1713764943885,\"2157316194161039\":1713764943887,\"1112488281185033\":1713765426056,\"1832577146185657\":1713765426057,\"1881442823416879\":1713765426058}",
+			"showRecentSaves": true,
+			"feeds.aboutpreferences": true,
+			"feeds.newtabinit": true,
+			"feeds.places": true,
+			"feeds.prefs": true,
+			"feeds.sections": true,
+			"feeds.section.highlights": false,
+			"feeds.system.topstories": true,
+			"feeds.systemtick": true,
+			"feeds.telemetry": true,
+			"feeds.favicon": true,
+			"feeds.system.topsites": true,
+			"feeds.recommendationprovider": true,
+			"feeds.discoverystreamfeed": true,
+			"isPrivateBrowsingEnabled": true,
+			"platform": "linux",
+			"region": "IN",
+			"fxa_endpoint": "https://accounts.firefox.com/",
+			"appUpdateChannel": "release",
+			"improvesearch.topSiteSearchShortcuts": true,
+			"mayHaveSponsoredTopSites": true,
+			"improvesearch.handoffToAwesomebar": true,
+			"featureConfig": {
+				"customizationMenuEnabled": null,
+				"topSitesContileEnabled": true
+			},
+			"pocketConfig": {
+				"spocPositions": "1,5,7,11,18,20",
+				"spocTopsitesPositions": "2",
+				"contileTopsitesPositions": "0,1",
+				"spocAdTypes": "",
+				"spocZoneIds": "",
+				"spocTopsitesAdTypes": "",
+				"spocTopsitesZoneIds": "",
+				"spocTopsitesPlacementEnabled": true,
+				"spocSiteId": "",
+				"widgetPositions": "",
+				"hybridLayout": false,
+				"hideCardBackground": false,
+				"fourCardLayout": false,
+				"newFooterSection": false,
+				"saveToPocketCard": true,
+				"saveToPocketCardRegions": "",
+				"hideDescriptions": false,
+				"hideDescriptionsRegions": "",
+				"compactGrid": false,
+				"compactImages": false,
+				"imageGradient": false,
+				"titleLines": 3,
+				"descLines": 3,
+				"onboardingExperience": false,
+				"essentialReadsHeader": false,
+				"editorsPicksHeader": false,
+				"recentSavesEnabled": false,
+				"readTime": true,
+				"newSponsoredLabel": false,
+				"sendToPocket": true,
+				"recsPersonalized": false,
+				"spocsPersonalized": true,
+				"spocsCacheTimeout": null,
+				"ctaButtonSponsors": "",
+				"ctaButtonVariant": "",
+				"spocMessageVariant": "",
+				"regionStoriesConfig": "US,DE,CA,GB,IE,CH,AT,BE,IN,FR,IT,ES",
+				"regionBffConfig": "US,DE,CA,GB,IE,CH,AT,BE,IN,FR,IT,ES",
+				"regionStoriesBlock": "",
+				"localeListConfig": "",
+				"regionSpocsConfig": "US,CA,DE,GB,FR,IT,ES",
+				"topSitesContileSovEnabled": true
+			},
+			"logowordmark.alwaysVisible": true,
+			"feeds.section.topstories": true,
+			"discoverystream.enabled": true,
+			"discoverystream.sponsored-collections.enabled": false,
+			"discoverystream.hardcoded-basic-layout": false,
+			"discoverystream.personalization.enabled": true,
+			"discoverystream.personalization.override": false,
+			"discoverystream.personalization.modelKeys": "nb_model_arts_and_entertainment, nb_model_autos_and_vehicles, nb_model_beauty_and_fitness, nb_model_blogging_resources_and_services, nb_model_books_and_literature, nb_model_business_and_industrial, nb_model_computers_and_electronics, nb_model_finance, nb_model_food_and_drink, nb_model_games, nb_model_health, nb_model_hobbies_and_leisure, nb_model_home_and_garden, nb_model_internet_and_telecom, nb_model_jobs_and_education, nb_model_law_and_government, nb_model_online_communities, nb_model_people_and_society, nb_model_pets_and_animals, nb_model_real_estate, nb_model_reference, nb_model_science, nb_model_shopping, nb_model_sports, nb_model_travel",
+			"discoverystream.spocs-endpoint": "",
+			"discoverystream.spocs-endpoint-query": "",
+			"newNewtabExperience.colors": "#0090ED,#FF4F5F,#2AC3A2,#FF7139,#A172FF,#FFA437,#FF2A8A"
+		}
+	},
+	"Dialog": {
+		"visible": false,
+		"data": {}
+	},
+	"Sections": [
+		{
+			"title": {
+				"id": "newtab-section-header-stories"
+			},
+			"rows": [],
+			"enabled": true,
+			"id": "topstories",
+			"pref": {
+				"titleString": {
+					"id": "home-prefs-recommended-by-header-generic"
+				},
+				"descString": {
+					"id": "home-prefs-recommended-by-description-generic"
+				},
+				"nestedPrefs": [],
+				"learnMore": {
+					"link": {
+						"href": "https://getpocket.com/firefox/new_tab_learn_more",
+						"id": "home-prefs-recommended-by-learn-more"
+					}
+				},
+				"collapsed": false,
+				"feed": "feeds.section.topstories"
+			},
+			"shouldHidePref": false,
+			"eventSource": "TOP_STORIES",
+			"icon": "chrome://global/skin/icons/pocket.svg",
+			"learnMore": {
+				"link": {
+					"href": "https://getpocket.com/firefox/new_tab_learn_more",
+					"message": {
+						"id": "newtab-pocket-learn-more"
+					}
+				}
+			},
+			"compactCards": false,
+			"rowsPref": "section.topstories.rows",
+			"maxRows": 4,
+			"availableLinkMenuOptions": [
+				"CheckBookmarkOrArchive",
+				"CheckSavedToPocket",
+				"Separator",
+				"OpenInNewWindow",
+				"OpenInPrivateWindow",
+				"Separator",
+				"BlockUrl"
+			],
+			"emptyState": {
+				"message": {
+					"id": "newtab-empty-section-topstories-generic"
+				},
+				"icon": "check"
+			},
+			"shouldSendImpressionStats": true,
+			"dedupeFrom": [
+				"highlights"
+			],
+			"options": {
+				"api_key_pref": "extensions.pocket.oAuthConsumerKey",
+				"hidden": false,
+				"provider_icon": "chrome://global/skin/icons/pocket.svg",
+				"provider_name": "Pocket",
+				"read_more_endpoint": "https://getpocket.com/explore/trending?src=fx_new_tab",
+				"stories_endpoint": "https://getpocket.cdn.mozilla.net/v3/firefox/global-recs?version=3&consumer_key=$apiKey&locale_lang=en-US&feed_variant=default_spocs_off",
+				"stories_referrer": "https://getpocket.com/recommendations",
+				"topics_endpoint": "https://getpocket.cdn.mozilla.net/v3/firefox/trending-topics?version=2&consumer_key=$apiKey&locale_lang=en-US",
+				"show_spocs": false
+			},
+			"contextMenuOptions": [
+				"CheckBookmarkOrArchive",
+				"CheckSavedToPocket",
+				"Separator",
+				"OpenInNewWindow",
+				"OpenInPrivateWindow",
+				"Separator",
+				"BlockUrl"
+			],
+			"initialized": false,
+			"dedupeConfigurations": [
+				{
+					"id": "topstories",
+					"dedupeFrom": [
+						"highlights"
+					]
+				}
+			]
+		},
+		{
+			"title": {
+				"id": "newtab-section-header-recent-activity"
+			},
+			"rows": [],
+			"enabled": false,
+			"id": "highlights",
+			"pref": {
+				"titleString": {
+					"id": "home-prefs-recent-activity-header"
+				},
+				"descString": {
+					"id": "home-prefs-recent-activity-description"
+				},
+				"nestedPrefs": [
+					{
+						"name": "section.highlights.includeVisited",
+						"titleString": "home-prefs-highlights-option-visited-pages"
+					},
+					{
+						"name": "section.highlights.includeBookmarks",
+						"titleString": "home-prefs-highlights-options-bookmarks"
+					},
+					{
+						"name": "section.highlights.includeDownloads",
+						"titleString": "home-prefs-highlights-option-most-recent-download"
+					},
+					{
+						"name": "section.highlights.includePocket",
+						"titleString": "home-prefs-highlights-option-saved-to-pocket",
+						"hidden": false
+					}
+				],
+				"collapsed": false,
+				"feed": "feeds.section.highlights"
+			},
+			"shouldHidePref": false,
+			"eventSource": "HIGHLIGHTS",
+			"icon": "chrome://global/skin/icons/highlights.svg",
+			"compactCards": true,
+			"rowsPref": "section.highlights.rows",
+			"maxRows": 4,
+			"emptyState": {
+				"message": {
+					"id": "newtab-empty-section-highlights"
+				},
+				"icon": "chrome://global/skin/icons/highlights.svg"
+			},
+			"shouldSendImpressionStats": false,
+			"options": {},
+			"initialized": false
+		}
+	],
+	"Pocket": {
+		"isUserLoggedIn": null,
+		"pocketCta": {},
+		"waitingForSpoc": true
+	},
+	"Personalization": {
+		"lastUpdated": 1713759589028,
+		"initialized": true
+	},
+	"DiscoveryStream": {
+		"config": {
+			"api_key_pref": "extensions.pocket.oAuthConsumerKey",
+			"collapsible": true,
+			"enabled": true
+		},
+		"layout": [
+			{
+				"width": 12,
+				"components": [
+					{
+						"type": "TopSites",
+						"header": {
+							"title": {
+								"id": "newtab-section-header-topsites"
+							}
+						},
+						"placement": {
+							"name": "sponsored-topsites",
+							"ad_types": [
+								3120
+							],
+							"zone_ids": [
+								280143
+							]
+						},
+						"spocs": {
+							"probability": 1,
+							"prefs": [
+								"showSponsoredTopSites"
+							],
+							"positions": [
+								{
+									"index": 2
+								}
+							]
+						},
+						"properties": {}
+					},
+					{
+						"type": "Message",
+						"essentialReadsHeader": false,
+						"editorsPicksHeader": false,
+						"header": {
+							"title": {
+								"id": "newtab-section-header-stories"
+							},
+							"subtitle": "",
+							"link_text": {
+								"id": "newtab-pocket-learn-more"
+							},
+							"link_url": "https://getpocket.com/firefox/new_tab_learn_more",
+							"icon": "chrome://global/skin/icons/pocket.svg"
+						},
+						"properties": {
+							"spocMessageVariant": ""
+						},
+						"styles": {
+							".ds-message": "margin-bottom: -20px"
+						}
+					},
+					{
+						"type": "CardGrid",
+						"properties": {
+							"items": 21,
+							"hybridLayout": false,
+							"hideCardBackground": false,
+							"fourCardLayout": false,
+							"compactGrid": false,
+							"essentialReadsHeader": false,
+							"editorsPicksHeader": false,
+							"onboardingExperience": false,
+							"ctaButtonSponsors": [
+								""
+							],
+							"ctaButtonVariant": "",
+							"spocMessageVariant": ""
+						},
+						"widgets": {
+							"positions": [],
+							"data": [
+								{
+									"type": "TopicsWidget"
+								}
+							]
+						},
+						"cta_variant": "link",
+						"header": {
+							"title": ""
+						},
+						"placement": {
+							"name": "spocs",
+							"ad_types": [
+								3617
+							],
+							"zone_ids": [
+								217758,
+								217995
+							]
+						},
+						"feed": {
+							"embed_reference": null,
+							"url": "https://firefox-api-proxy.cdn.mozilla.net/desktop/v1/recommendations?locale=$locale&region=$region&count=30"
+						},
+						"spocs": {
+							"probability": 1,
+							"positions": [
+								{
+									"index": 1
+								},
+								{
+									"index": 5
+								},
+								{
+									"index": 7
+								},
+								{
+									"index": 11
+								},
+								{
+									"index": 18
+								},
+								{
+									"index": 20
+								}
+							]
+						}
+					},
+					{
+						"type": "Navigation",
+						"newFooterSection": false,
+						"properties": {
+							"alignment": "left-align",
+							"links": [
+								{
+									"name": "Self improvement",
+									"url": "https://getpocket.com/explore/self-improvement?utm_source=pocket-newtab"
+								},
+								{
+									"name": "Food",
+									"url": "https://getpocket.com/explore/food?utm_source=pocket-newtab"
+								},
+								{
+									"name": "Entertainment",
+									"url": "https://getpocket.com/explore/entertainment?utm_source=pocket-newtab"
+								},
+								{
+									"name": "Health & fitness",
+									"url": "https://getpocket.com/explore/health?utm_source=pocket-newtab"
+								},
+								{
+									"name": "Science",
+									"url": "https://getpocket.com/explore/science?utm_source=pocket-newtab"
+								},
+								{
+									"name": "More recommendations ›",
+									"url": "https://getpocket.com/explore?utm_source=pocket-newtab"
+								}
+							],
+							"extraLinks": [
+								{
+									"name": "Career",
+									"url": "https://getpocket.com/explore/career?utm_source=pocket-newtab"
+								},
+								{
+									"name": "Technology",
+									"url": "https://getpocket.com/explore/technology?utm_source=pocket-newtab"
+								}
+							],
+							"privacyNoticeURL": {
+								"url": "https://www.mozilla.org/privacy/firefox/#recommend-relevant-content",
+								"title": {
+									"id": "newtab-section-menu-privacy-notice"
+								}
+							}
+						},
+						"header": {
+							"title": {
+								"id": "newtab-pocket-read-more"
+							}
+						},
+						"styles": {
+							".ds-navigation": "margin-top: -10px;"
+						}
+					}
+				]
+			}
+		],
+		"isPrivacyInfoModalVisible": false,
+		"isCollectionDismissible": true,
+		"feeds": {
+			"data": {
+				"https://firefox-api-proxy.cdn.mozilla.net/desktop/v1/recommendations?locale=$locale&region=$region&count=30": {
+					"lastUpdated": 1713766514082,
+					"personalized": true,
+					"data": {
+						"settings": {},
+						"recommendations": [
+							{
+								"id": 1112488281185033,
+								"url": "https://www.romper.com/parenting/my-baby-hates-me-parent-preference-dad?utm_source=pocket-newtab-en-intl",
+								"title": "The Three Long Years When My Baby Hated Me",
+								"excerpt": "Precisely when we finished weaning, her parental preference shifted dramatically, and in favor of my husband.",
+								"publisher": "romper.com",
+								"raw_image_src": "https://s3.us-east-1.amazonaws.com/pocket-curatedcorpusapi-prod-images/0e270581-f88f-4dca-9614-0f108cae1d47.jpeg",
+								"recommendation_id": "5358fd90-a359-4c09-8ddc-f9951f36c5a2",
+								"score": 1
+							},
+							{
+								"id": 3901156185209244,
+								"url": "https://www.economist.com/finance-and-economics/2024/04/16/generation-z-is-unprecedentedly-rich?utm_source=pocket-newtab-en-intl",
+								"title": "Generation Z Is Unprecedentedly Rich",
+								"excerpt": "Generation Z is taking over. In the rich world there are at least 250m people born between 1997 and 2012. About half are now in a job.",
+								"publisher": "The Economist",
+								"raw_image_src": "https://s3.us-east-1.amazonaws.com/pocket-curatedcorpusapi-prod-images/0d2f1aa4-83be-4997-8924-63964832941f.jpeg",
+								"recommendation_id": "38442112-033e-412a-8ba0-2a2a5140a0ee",
+								"score": 1
+							},
+							{
+								"id": 2157316194161039,
+								"url": "https://indianexpress.com/article/explained/explained-culture/snape-srk-lord-byron-9281153/?utm_source=pocket-newtab-en-intl",
+								"title": "Influencing Severus Snape to SRK, why Lord Byron still captures our imagination",
+								"excerpt": "“Mad, bad, and dangerous to know,” is how Lady Caroline Lamb described her lover Lord George Byron (1788-1824), an unlikely Romantic hero, who breathed life into a million literary characters — and continues to do so, two centuries after his passing.",
+								"publisher": "The Indian Express",
+								"raw_image_src": "https://s3.us-east-1.amazonaws.com/pocket-curatedcorpusapi-prod-images/7d1fe7df-1285-4a71-a978-65432ac8f3bc.jpeg",
+								"recommendation_id": "8449254f-d563-499d-a7c9-d3daee63a192",
+								"score": 1
+							},
+							{
+								"id": 4280406424615767,
+								"url": "https://www.vox.com/health/2024/4/17/24132112/period-mental-health-depression-anxiety-menstruation?utm_source=pocket-newtab-en-intl",
+								"title": "What Science Is Just Starting to Understand About Periods",
+								"excerpt": "Researchers are still only beginning to explore exactly how menstruation can affect health — and, in some people, worsen symptoms of illness.",
+								"publisher": "Vox",
+								"raw_image_src": "https://s3.us-east-1.amazonaws.com/pocket-curatedcorpusapi-prod-images/80597446-f553-4e7f-8256-800f417fa1cc.jpeg",
+								"recommendation_id": "be744099-2480-4b9e-b30f-c8c633575e25",
+								"score": 1
+							},
+							{
+								"id": 3318835701321266,
+								"url": "https://annehelen.substack.com/p/i-resonate-with-that-nails-on-chalkboard?utm_source=pocket-newtab-en-intl",
+								"title": "A Grammatical Annoyance: \"I Resonate With That\"",
+								"excerpt": "The first time I noticed it, I thought it was just a mistake: someone mixing up the grammar, not knowing it should read.",
+								"publisher": "Culture Study",
+								"raw_image_src": "https://s3.us-east-1.amazonaws.com/pocket-curatedcorpusapi-prod-images/20697e1e-d408-436a-8d97-e33129d121e7.jpeg",
+								"recommendation_id": "fb1f6999-70fa-414d-879b-0b882bbb558b",
+								"score": 1
+							},
+							{
+								"id": 3765949253182358,
+								"url": "https://news.abplive.com/business/imf-india-economy-growth-prediction-reforms-needed-risks-india-needs-to-invest-in-education-healthcare-to-continue-as-fastest-growing-economy-globally-says-imf-official-1681317?utm_source=pocket-newtab-en-intl",
+								"title": "India Needs to Invest in Education, Healthcare to Continue As Fastest-Growing Economy Globally, Says IMF Official",
+								"excerpt": "The International Monetary Fund in its latest World Economic Outlook edition said that India is estimated to grow at 6.8 per cent FY24 and maintain a growth rate of 6.5 per cent in FY25",
+								"publisher": "ABP Live",
+								"raw_image_src": "https://s3.us-east-1.amazonaws.com/pocket-curatedcorpusapi-prod-images/2e4c7245-39bf-4dcc-9970-17c104bc696e.jpeg",
+								"recommendation_id": "3593c625-ff84-45f4-b4d8-82c55d047720",
+								"score": 1
+							},
+							{
+								"id": 1832577146185657,
+								"url": "https://timesofindia.indiatimes.com/entertainment/hindi/bollywood/news/first-hollywood-and-now-world-cinema-doing-well-in-india-speak-of-a-discerning-and-receptive-audience/articleshow/109449491.cms?utm_source=pocket-newtab-en-intl",
+								"title": "First Hollywood, and Now World Cinema Doing Well in India Speak of a Discerning and Receptive Audience",
+								"excerpt": "When Titanic was released in 1997, there was only one print in entire Delhi. There was a time, not so long ago, when only Hindi movies used to play at the single screen cinemas in India.",
+								"publisher": "The Times of India",
+								"raw_image_src": "https://s3.us-east-1.amazonaws.com/pocket-curatedcorpusapi-prod-images/28bf1f8f-f415-4cbd-9bfc-62404f09f66b.jpeg",
+								"recommendation_id": "f03f69c0-e1f6-481e-8a58-a80e7703efba",
+								"score": 1
+							},
+							{
+								"id": 1355413115785972,
+								"url": "https://www.cnbc.com/2024/04/21/cricket-big-business-in-india-brings-star-power-to-us-with-world-cup.html?utm_source=pocket-newtab-en-intl",
+								"title": "Cricket, a Big Business in India, Brings Star Power to the U.S. With the Country’s First World Cup",
+								"excerpt": "A cricket world cup is arriving in the U.S. for the first time as the country explores its future with the sport.",
+								"publisher": "CNBC",
+								"raw_image_src": "https://s3.us-east-1.amazonaws.com/pocket-curatedcorpusapi-prod-images/7f883a29-deca-47ed-8f2a-68807025c19f.jpeg",
+								"recommendation_id": "7ea05561-8bc1-4152-a814-d21bbc88362f",
+								"score": 1
+							},
+							{
+								"id": 1799588771848422,
+								"url": "https://www.deccanherald.com/business/jobs-and-careers/india-s-jobs-vs-education-conundrum-needs-a-deeper-fix-2979531?utm_source=pocket-newtab-en-intl",
+								"title": "India’s Jobs Vs Education Conundrum Needs a Deeper Fix",
+								"excerpt": "This youthful workforce has the potential to drive economic growth, innovation, and productivity. However, the recent India Employment Report 2024, jointly published by the International Labour Organisation and the Institute of Human Development, paints an alarming picture.",
+								"publisher": "Deccan Herald",
+								"raw_image_src": "https://s3.us-east-1.amazonaws.com/pocket-curatedcorpusapi-prod-images/023b3feb-8015-471a-9614-5647162e16f4.jpeg",
+								"recommendation_id": "6931bde3-6f92-460d-a51a-0da68ce2186c",
+								"score": 1
+							},
+							{
+								"id": 4152659659551061,
+								"url": "https://www.fortuneindia.com/opinion/chinas-api-extortion-from-indian-pharma-breaking-down/116490?utm_source=pocket-newtab-en-intl",
+								"title": "China’s API Extortion From Indian Pharma Breaking Down",
+								"excerpt": "The API coming from China started getting dumped in India at very low prices.",
+								"publisher": "Fortune India",
+								"raw_image_src": "https://s3.us-east-1.amazonaws.com/pocket-curatedcorpusapi-prod-images/3b6a3e0d-7872-4d29-8b54-8359a0e5c662.jpeg",
+								"recommendation_id": "256793d8-dd44-4c29-a062-c9f26c123ebd",
+								"score": 1
+							},
+							{
+								"id": 332158457633830,
+								"url": "https://www.spectator.co.uk/article/life-lessons-from-the-oldest-people-in-the-world/?utm_source=pocket-newtab-en-intl",
+								"title": "Life lessons from the oldest people in the world",
+								"excerpt": "María Branyas Morera, aged 117, is the oldest person in the world. She was born in California on 4 March 1907 to Spanish parents who decided to return home in 1915.",
+								"publisher": "The Spectator",
+								"raw_image_src": "https://s3.us-east-1.amazonaws.com/pocket-curatedcorpusapi-prod-images/92194a64-7877-4962-b1b4-c7d438a0b57f.jpeg",
+								"recommendation_id": "5abc330e-6347-4a2d-af00-987ef2b57d4f",
+								"score": 1
+							},
+							{
+								"id": 3380048088614898,
+								"url": "https://dariusforoux.com/investing-decisions-questions/?utm_source=pocket-newtab-en-intl",
+								"title": "12 Simple Questions You Should Ask Before Making Investing Decisions",
+								"excerpt": "How do you make the right investing decisions? It’s all about yourself asking the right questions and making hard simple.",
+								"publisher": "Darius Foroux",
+								"raw_image_src": "https://i0.wp.com/dariusforoux.com/wp-content/uploads/2024/04/Investing-Decisions.png?fit=2048%2C1536&ssl=1",
+								"recommendation_id": "1292d7e8-2264-4a3d-9d6f-362d47464541",
+								"score": 1
+							},
+							{
+								"id": 444460154658532,
+								"url": "https://www.theguardian.com/fashion/2024/apr/16/super-cute-please-like-the-unstoppable-rise-of-shein?utm_source=pocket-newtab-en-intl",
+								"title": "‘Super Cute Please Like’: The Unstoppable Rise of Shein",
+								"excerpt": "It is taking fast fashion to ever faster and ever cheaper extremes, and making billions from it. Why is the whole world shopping at Shein?",
+								"publisher": "The Guardian",
+								"raw_image_src": "https://s3.us-east-1.amazonaws.com/pocket-curatedcorpusapi-prod-images/d886acd2-42b1-4ddf-901d-0ca750d35688.jpeg",
+								"recommendation_id": "c19a1e53-ca97-4ef1-8a28-2228457a3caa",
+								"score": 1
+							},
+							{
+								"id": 2765978656104409,
+								"url": "https://mashable.com/article/alien-planet-life-purple?utm_source=pocket-newtab-en-intl",
+								"title": "Alien Planets Might Teem With Purple — Yes, Purple — Life",
+								"excerpt": "NASA has already spotted a diversity of rocky, Earth-like worlds in the cosmos. But unlike our verdant planet, many of these worlds may flourish with purple life — if life exists out there, that is.",
+								"publisher": "Mashable",
+								"raw_image_src": "https://s3.us-east-1.amazonaws.com/pocket-curatedcorpusapi-prod-images/7b5f33e5-4882-46cb-b709-01c0fc3feece.jpeg",
+								"recommendation_id": "ba56da89-df19-46d7-8c9f-a32aeefe8367",
+								"score": 1
+							},
+							{
+								"id": 356452197224241,
+								"url": "https://www.thehindu.com/sport/other-sports/vinesh-secures-womens-50kg-paris-olympics-quota-for-india/article68087991.ece?utm_source=pocket-newtab-en-intl",
+								"title": "Vinesh, Reetika, Anshu secure Paris Olympics quotas for India",
+								"excerpt": "Making a strong comeback to international arena after leading a prolonged protest against former WFI chief Brij Bhushan Sharan Singh, celebrated Indian wrestler Vinesh Phogat locked Paris Olympics quota in women’s 50kg category with a strong show at the Asian Olympic Qualifier, in Bishkek on April",
+								"publisher": "The Hindu",
+								"raw_image_src": "https://s3.us-east-1.amazonaws.com/pocket-curatedcorpusapi-prod-images/4fb468d5-e56c-4940-9e3d-c6d68f358a84.jpeg",
+								"recommendation_id": "79fae46f-8470-4645-8206-38f09421250a",
+								"score": 1
+							},
+							{
+								"id": 2704259664541188,
+								"url": "https://www.vogue.com/article/taylor-swifts-trainer-reveals-her-eras-workout-routine?utm_source=pocket-newtab-en-intl",
+								"title": "Taylor Swift’s Trainer Reveals Her Eras Workout Routine—And His Identity",
+								"excerpt": "Do we really have the same amount of hours in the day as Taylor Swift? It's hard for me to imagine—she's writing entire surprise albums while on the highest-grossing tour in history for a different Grammy-winning album; I'm having trouble balancing finishing my laundry, finding time to eat lunch,",
+								"publisher": "Vogue",
+								"raw_image_src": "https://s3.us-east-1.amazonaws.com/pocket-curatedcorpusapi-prod-images/61d67d21-b682-4f1b-8a81-d6cdc2b4a6d4.jpeg",
+								"recommendation_id": "dc5f8a8e-17e0-4aee-b14c-4bc4b866057b",
+								"score": 1
+							},
+							{
+								"id": 2886961440847966,
+								"url": "https://yourstory.com/2024/04/indian-environment-tech-sector-raised-total-funding-of-usd-73b-to-date?utm_source=pocket-newtab-en-intl",
+								"title": "Indian environment tech sector has raised a total funding of $7.3B to date",
+								"excerpt": "According to a report by data platform Tracxn, India's environmental technology funding saw substantial growth between 2018 and 2022, surging from $0.23 billion to $2.47 billion.",
+								"publisher": "YourStory",
+								"raw_image_src": "https://s3.us-east-1.amazonaws.com/pocket-curatedcorpusapi-prod-images/c206dbac-b33f-4f9e-941c-f824614e8b73.png",
+								"recommendation_id": "1de124fb-6a28-4941-83d8-182020e0b155",
+								"score": 1
+							},
+							{
+								"id": 1881442823416879,
+								"url": "https://foreignpolicy.com/2024/04/08/india-generation-z-vote-modi-bjp-elections/?utm_source=pocket-newtab-en-intl",
+								"title": "Meet India’s Generation Z",
+								"excerpt": "India changes more in five years than many countries would in a quarter century. This is partly because it is still relatively young: The country gained independence just 76 years ago, and nearly half of its population is under the age of 25.",
+								"publisher": "Foreign Policy",
+								"raw_image_src": "https://s3.us-east-1.amazonaws.com/pocket-curatedcorpusapi-prod-images/5ed0a186-6b08-4cf3-86d6-0e5787a3dafd.jpeg",
+								"recommendation_id": "474e4021-b240-4f3d-8e2f-3230347f4a2c",
+								"score": 1
+							},
+							{
+								"id": 685051153781282,
+								"url": "https://www.theguardian.com/world/2024/apr/19/messianic-spell-how-narendra-modi-created-a-cult-personality?utm_source=pocket-newtab-en-intl",
+								"title": "How Narendra Modi Created a Cult of Personality",
+								"excerpt": "Experts say Indian PM is hoping to be ‘bigger than Gandhi’ as he aims to win a third term in office.",
+								"publisher": "The Guardian",
+								"raw_image_src": "https://i.guim.co.uk/img/media/233fd80023d33b7d456ab169af2a4f8490b5635f/0_168_3361_2017/master/3361.jpg?width=1200&height=630&quality=85&auto=format&fit=crop&overlay-align=bottom%2Cleft&overlay-width=100p&overlay-base64=L2ltZy9zdGF0aWMvb3ZlcmxheXMvdGctZGVmYXVsdC5wbmc&enable=upscale&s=862a7e62d4375f206a7ef59a738e8a2c",
+								"recommendation_id": "f401a0d9-c17e-4fed-9935-92afed83712f",
+								"score": 1
+							},
+							{
+								"id": 1529201560502776,
+								"url": "https://www.travelandleisureasia.com/my/destinations/india/best-flea-markets-in-india/?utm_source=pocket-newtab-en-intl",
+								"title": "Souk Stories: Explore the Best Flea Markets in India for a Shopaholic’s Delight",
+								"excerpt": "Skip the souvenir shops on your travels and explore the exciting world of India's best flea markets across Mumbai, Delhi, Goa and beyond.",
+								"publisher": "Travel & Leisure Asia",
+								"raw_image_src": "https://s3.us-east-1.amazonaws.com/pocket-curatedcorpusapi-prod-images/6fccacf2-0b19-48a4-8d29-2d9fd65e82e6.jpeg",
+								"recommendation_id": "598fa5a7-5b59-49da-98b5-80c0e0d633f0",
+								"score": 1
+							},
+							{
+								"id": 4151998379777308,
+								"url": "https://lifestyle.livemint.com//food/discover/celebrity-chefs-sellouts-david-chang-chili-crunch-111713583340002.html?utm_source=pocket-newtab-en-intl",
+								"title": "Are celebrity chefs sellouts?",
+								"excerpt": "David Chang’s public apology and the announcement that his company Momofuku would back off of an attempt to trademark the term “chili crunch” feel like standard damage control for a popular chef and the empire he’s built.",
+								"publisher": "Mint Lounge",
+								"raw_image_src": "https://s3.us-east-1.amazonaws.com/pocket-curatedcorpusapi-prod-images/1f322253-7a2f-4509-b543-57979fd636a1.jpeg",
+								"recommendation_id": "e6fcabac-20cd-4fdd-8aba-17c1b9610e9a",
+								"score": 1
+							},
+							{
+								"id": 596037997174719,
+								"url": "https://www.indiaspend.com/health/modi-govt-doubled-spending-on-insurance-not-enough-on-health-infrastructure-904388?utm_source=pocket-newtab-en-intl",
+								"title": "Modi Govt Doubled Spending On Insurance, Not Enough On Health Infrastructure",
+								"excerpt": "The National Health Policy, 2002, had set a target of 2% of GDP by 2010; the United Progressive Alliance government, in 2004, had set a goal to increase public-health spending to 2-3% of GDP over a five-year period; and the Centre’s 12th five-year plan set the target at 1.",
+								"publisher": "IndiaSpend",
+								"raw_image_src": "https://s3.us-east-1.amazonaws.com/pocket-curatedcorpusapi-prod-images/8830707a-f490-4793-afae-fce8bd677fa7.jpeg",
+								"recommendation_id": "8dc970a0-5bc1-45a6-b9fa-13d2ef6351ab",
+								"score": 1
+							},
+							{
+								"id": 1491816934667122,
+								"url": "https://apnews.com/article/ancient-giant-snake-india-8ca7b6b971b0a1b6c79ce50819d337c6?utm_source=pocket-newtab-en-intl",
+								"title": "This ancient snake in India might have been longer than a school bus and weighed a ton",
+								"excerpt": "A ancient giant snake in India might have been longer than a school bus and weighed a ton, researchers reported Thursday. Fossils found near a coal mine revealed a snake that stretched an estimated 36 feet (11 meters) to 50 feet (15 meters).",
+								"publisher": "The Associated Press",
+								"raw_image_src": "https://s3.us-east-1.amazonaws.com/pocket-curatedcorpusapi-prod-images/40088663-139e-4963-a4b4-9bdb0b8a2641.jpeg",
+								"recommendation_id": "5d314f7b-3611-40b4-bcc9-248c2ce7e7ef",
+								"score": 1
+							},
+							{
+								"id": 4316293424019043,
+								"url": "https://www.thehindu.com/sci-tech/science/india-aims-to-achieve-debris-free-space-missions-by-2030/article68071003.ece?utm_source=pocket-newtab-en-intl",
+								"title": "India aims to achieve debris-free space missions by 2030",
+								"excerpt": "India has made a declaration to achieve debris-free space missions by 2030. Indian Space Research Organisation (ISRO) Chairman S. Somanath made the declaration on April 16, at the 42nd Inter-Agency Space Debris Coordination Committee (IADC) annual meet.",
+								"publisher": "The Hindu",
+								"raw_image_src": "https://s3.us-east-1.amazonaws.com/pocket-curatedcorpusapi-prod-images/651bf5a6-720f-419d-a632-51624bb952bc.jpeg",
+								"recommendation_id": "d56b0500-ede6-491f-97c8-963cc6b5cda2",
+								"score": 1
+							},
+							{
+								"id": 4214380043888287,
+								"url": "https://indianexpress.com/article/explained/explained-economics/india-israel-iran-trade-oil-prices-tensions-9277472/?utm_source=pocket-newtab-en-intl",
+								"title": "Where India’s Trade With Israel and Iran Stands, and Whether Regional Tensions Could Impact It",
+								"excerpt": "Iran’s attack on Israel earlier this week has sparked tensions in the Middle East and beyond. India, which has friendly ties with both the countries, has expressed “serious concerns” about escalation of hostilities. An escalation could also worry traders in the region and spook markets.",
+								"publisher": "The Indian Express",
+								"raw_image_src": "https://s3.us-east-1.amazonaws.com/pocket-curatedcorpusapi-prod-images/58c0cf45-a519-4904-898d-56b71bf95f88.jpeg",
+								"recommendation_id": "0c1989da-c9a3-459d-b4f6-f91c01a599c4",
+								"score": 1
+							},
+							{
+								"id": 4244960333818932,
+								"url": "https://www.technologyreview.com/2024/04/19/1090872/ai-users-people-terms/?utm_source=pocket-newtab-en-intl",
+								"title": "It’s Time to Retire the Term “User”",
+								"excerpt": "The proliferation of AI means we need a new word.",
+								"publisher": "MIT Technology Review",
+								"raw_image_src": "https://s3.us-east-1.amazonaws.com/pocket-curatedcorpusapi-prod-images/6523b619-7d77-437c-ba44-43e37546dd03.jpeg",
+								"recommendation_id": "bc2b651c-02bc-4a1f-855d-ca388c22af6e",
+								"score": 1
+							},
+							{
+								"id": 3400517997660793,
+								"url": "https://lifestyle.livemint.com//news/big-story/democracy-books-elections-2024-politics-literature-111713514096553.html?utm_source=pocket-newtab-en-intl",
+								"title": "12 Writers on Their Literary Experiences of Democracy",
+								"excerpt": "Every five years, as Indian democracy gears up for its biggest carnival—the general election—publishers fall in step with the spirit of the season. Suddenly bookshops are flush with political titles.",
+								"publisher": "Mint",
+								"raw_image_src": "https://s3.us-east-1.amazonaws.com/pocket-curatedcorpusapi-prod-images/e6a2f86c-71df-47b4-bd47-59b704052778.jpeg",
+								"recommendation_id": "41474484-96fa-4307-ab26-7b6004e1738b",
+								"score": 1
+							},
+							{
+								"id": 2874067393483325,
+								"url": "https://lifestyle.livemint.com//food/drink/coffee-arabica-robusta-genome-study-prehistoric-origin-111713345088343.html?utm_source=pocket-newtab-en-intl",
+								"title": "Coffee's prehistoric origin is older than homo sapiens, finds study",
+								"excerpt": "You might call it a cup of Joe, java, mud, brew, mocha, or your morning jolt. Coffee undoubtedly is a big part of global culture, and the kind made from the Arabica bean is the most appreciated by coffee drinkers.",
+								"publisher": "Mint Lounge",
+								"raw_image_src": "https://s3.us-east-1.amazonaws.com/pocket-curatedcorpusapi-prod-images/d093c399-7003-4bc9-834c-842989111762.jpeg",
+								"recommendation_id": "1ddd1e25-01e3-4cbb-b2f3-8a9170b57789",
+								"score": 1
+							},
+							{
+								"id": 3935761713311708,
+								"url": "https://indianexpress.com/article/explained/brahmos-missiles-philippines-development-9280055/?utm_source=pocket-newtab-en-intl",
+								"title": "Indian BrahMos missiles delivered to the Philippines: The missile’s significance",
+								"excerpt": "India’s BrahMos supersonic cruise missiles were delivered to the Philippines on Friday (April 19), as part of a $375 deal signed by the two countries in 2022",
+								"publisher": "The Indian Express",
+								"raw_image_src": "https://s3.us-east-1.amazonaws.com/pocket-curatedcorpusapi-prod-images/1c418879-93e7-43c5-bc13-6b6d041a07f5.jpeg",
+								"recommendation_id": "e87c5489-189b-4474-9c0a-4b33e6f37df2",
+								"score": 1
+							},
+							{
+								"id": 541988717377334,
+								"url": "https://www.hindustantimes.com/india-news/how-evms-came-into-being-a-brief-history-101713470140879.html?utm_source=pocket-newtab-en-intl",
+								"title": "How EVMs Came Into Being: a Brief History",
+								"excerpt": "Elections are the heartbeat of a democracy. When India became independent, sceptics thought a poor and illiterate nation would fail to keep democracy alive. Elections are the heartbeat of a democracy.",
+								"publisher": "Hindustan Times",
+								"raw_image_src": "https://s3.us-east-1.amazonaws.com/pocket-curatedcorpusapi-prod-images/8344bb89-7d71-4ce6-9eb3-1014eabed2d3.jpeg",
+								"recommendation_id": "0ddddfe9-57f0-4c96-af9a-694c3898227e",
+								"score": 1
+							}
+						],
+						"status": "success"
+					}
+				}
+			},
+			"loaded": true
+		},
+		"spocs": {
+			"spocs_endpoint": "https://spocs.getpocket.com/spocs",
+			"lastUpdated": 1713501408652,
+			"data": {
+				"settings": {
+					"feature_flags": {
+						"collections": false,
+						"spoc_v2": true
+					},
+					"spocsPerNewTabs": 1,
+					"domainAffinityParameterSets": {
+						"default": {
+							"combinedDomainFactor": 0.5,
+							"frequencyFactor": 0.5,
+							"itemScoreFactor": 1,
+							"multiDomainBoost": 0,
+							"perfectCombinedDomainScore": 2,
+							"perfectFrequencyVisits": 10,
+							"recencyFactor": 0.5
+						},
+						"fully-personalized": {
+							"combinedDomainFactor": 0.5,
+							"frequencyFactor": 0.5,
+							"itemScoreFactor": 0.01,
+							"multiDomainBoost": 0,
+							"perfectCombinedDomainScore": 2,
+							"perfectFrequencyVisits": 10,
+							"recencyFactor": 0.5
+						},
+						"fully-personalized-domains": {
+							"combinedDomainFactor": 0.5,
+							"frequencyFactor": 0.5,
+							"itemScoreFactor": 0.01,
+							"multiDomainBoost": 0,
+							"perfectCombinedDomainScore": 10,
+							"perfectFrequencyVisits": 1,
+							"recencyFactor": 0.5
+						}
+					},
+					"timeSegments": [
+						{
+							"id": "week-1",
+							"startTime": 432000,
+							"endTime": 0,
+							"weightPosition": 1
+						},
+						{
+							"id": "week-2",
+							"startTime": 864000,
+							"endTime": 432000,
+							"weightPosition": 1
+						},
+						{
+							"id": "week-3",
+							"startTime": 1296000,
+							"endTime": 864000,
+							"weightPosition": 1
+						},
+						{
+							"id": "week-4",
+							"startTime": 1728000,
+							"endTime": 1296000,
+							"weightPosition": 1
+						},
+						{
+							"id": "week-5",
+							"startTime": 2160000,
+							"endTime": 1728000,
+							"weightPosition": 1
+						},
+						{
+							"id": "week-6",
+							"startTime": 2592000,
+							"endTime": 2160000,
+							"weightPosition": 1
+						}
+					]
+				},
+				"sponsored-topsites": {
+					"title": "",
+					"context": "",
+					"items": []
+				}
+			},
+			"loaded": true,
+			"frequency_caps": [],
+			"blocked": [],
+			"placements": [
+				{
+					"name": "sponsored-topsites",
+					"ad_types": [
+						3120
+					],
+					"zone_ids": [
+						280143
+					]
+				}
+			]
+		},
+		"experimentData": {
+			"utmSource": "pocket-newtab"
+		},
+		"recentSavesData": [],
+		"isUserLoggedIn": false,
+		"recentSavesEnabled": false,
+		"pocketButtonEnabled": true,
+		"saveToPocketCard": true,
+		"hideDescriptions": false,
+		"compactImages": false,
+		"imageGradient": false,
+		"newSponsoredLabel": false,
+		"titleLines": 3,
+		"descLines": 3,
+		"readTime": true
+	},
+	"Search": {
+		"fakeFocus": false,
+		"hide": false
+	}
+};
+
+GhBE �           f&�F�͠����       :about:home alt-data 1;92721,script version 20240410171251  �;

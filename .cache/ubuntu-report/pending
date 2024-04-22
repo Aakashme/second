@@ -1,0 +1,65 @@
+{
+  "Version": "22.04",
+  "OEM": {
+    "Vendor": "LENOVO",
+    "Product": "11T0S00200",
+    "Family": "ThinkCentre neo 50s Gen 3"
+  },
+  "BIOS": {
+    "Vendor": "LENOVO",
+    "Version": "M49KT17A"
+  },
+  "Arch": "amd64",
+  "HwCap": "x86-64-v3",
+  "GPU": [
+    {
+      "Vendor": "8086",
+      "Model": "4692"
+    }
+  ],
+  "RAM": 16.1,
+  "Disks": [
+    1000.2
+  ],
+  "Partitions": [
+    959.8,
+    0.1
+  ],
+  "Screens": [
+    {
+      "Size": "410mmx230mm",
+      "Resolution": "1360x768",
+      "Frequency": "59.62"
+    }
+  ],
+  "Autologin": false,
+  "LivePatch": false,
+  "Session": {
+    "DE": "ubuntu:GNOME",
+    "Name": "ubuntu",
+    "Type": "wayland"
+  },
+  "Language": "en_IN",
+  "Timezone": "Asia/Kolkata",
+  "Install": {
+    "Media": "Ubuntu 22.04.1 LTS \"Jammy Jellyfish\" - Release amd64 (20220809.1)\n",
+    "Type": "GTK",
+    "OEM": false,
+    "PartitionMethod": "use_device",
+    "DownloadUpdates": true,
+    "Language": "en",
+    "Minimal": true,
+    "RestrictedAddons": false,
+    "Stages": {
+      "0": "language",
+      "4": "console_setup",
+      "9": "prepare",
+      "28": "partman",
+      "33": "start_install",
+      "50": "timezone",
+      "68": "usersetup",
+      "113": "user_done",
+      "2163": "done"
+    }
+  }
+}
